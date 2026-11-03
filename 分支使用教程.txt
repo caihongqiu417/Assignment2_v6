@@ -25,7 +25,7 @@ cd Assignment2_v6
 记录表各自另存，例如 Medium_实验记录.xlsx，放在项目的 records 文件夹。
 
 5. 保存并上传
-先在 Unity 和 Excel 中保存文件，再在项目根目录运行：
+等待本次训练结束或正常停止，保存 Unity 和 Excel 文件，再在项目根目录运行：
 git status
 git add .
 git diff --cached --stat
@@ -36,5 +36,7 @@ git push
 运行 git rev-parse --short HEAD 查看提交号，记录训练所用的代码版本。
 
 6. 记住两点
-results 训练结果不会自动上传 GitHub，需要自行备份，并在记录表写明位置。
+results 训练结果一起上传：包含模型、检查点、TensorBoard 日志和本次配置。
+每次使用独立 run ID，保留旧结果；曲线截图和记录表放在 records/自己的难度/ 下。
+提交记录写清实验编号、改动和结论；git add . 后检查待提交内容，再 commit 和 push。
 每人只改自己的分支；先不用合并。遇到冲突或推送失败，不要强制覆盖，联系组长。
