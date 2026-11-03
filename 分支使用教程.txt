@@ -1,0 +1,40 @@
+三人协作：Simple / Medium / Hard
+
+1. 加入仓库
+组长打开 GitHub 仓库 → Settings → Collaborators → Add people。
+输入组员的 GitHub 用户名，组员接受邀请。
+
+2. 下载项目（只做一次）
+在自己电脑的终端运行：
+git clone https://github.com/caihongqiu417/Assignment2_v6.git
+cd Assignment2_v6
+
+已有这个 Git 仓库的人，直接进入项目目录，不用重复下载。
+
+3. 切换到自己的分支（只选一条）
+负责 Simple：git switch simple
+负责 Medium：git switch medium
+负责 Hard：git switch hard
+
+运行 git branch --show-current 检查分支，别在 main 上做实验。
+
+4. 开始工作
+在自己的分支运行 git pull --ff-only，然后用 Unity 打开项目。
+各自完成：B0 → 分析问题 → 每次改一个因素 → 实验 → Final → 对比结论。
+每次实验用独立的 YAML 和 run ID，保留 B0。
+记录表各自另存，例如 Medium_实验记录.xlsx，放在项目的 records 文件夹。
+
+5. 保存并上传
+先在 Unity 和 Excel 中保存文件，再在项目根目录运行：
+git status
+git add .
+git diff --cached --stat
+git commit -m "记录本次实验的改动和结果"
+git push
+
+提交前确认没有无关文件或密码。提交说明改成自己本次做的事情。
+运行 git rev-parse --short HEAD 查看提交号，记录训练所用的代码版本。
+
+6. 记住两点
+results 训练结果不会自动上传 GitHub，需要自行备份，并在记录表写明位置。
+每人只改自己的分支；先不用合并。遇到冲突或推送失败，不要强制覆盖，联系组长。
