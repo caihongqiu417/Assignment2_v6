@@ -18,8 +18,10 @@ from datetime import datetime, timezone
 
 p = argparse.ArgumentParser()
 p.add_argument('--unity', required=True)
-p.add_argument('--config', default='config/simple_e1_batch512.yaml')
-p.add_argument('--run-id', default='Team1_Simple_E1_batch512_seed1_attempt2')
+p.add_argument('--config', required=True)
+p.add_argument('--run-id', required=True)
+p.add_argument('--experiment', default='E1')
+p.add_argument('--batch-size', type=int, choices=[256, 512], default=512)
 args = p.parse_args()
 root = Path(__file__).resolve().parents[1]
 record = root / 'records' / 'Simple' / args.run_id
@@ -35,6 +37,7 @@ flags = subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0
 trainer = None
 unity = None
 state = {'run_id': args.run_id, 'config': args.config, 'seed': 1, 'budget_steps': 500000,
+         'experiment': args.experiment, 'batch_size': args.batch_size,
          'start_utc': datetime.now(timezone.utc).isoformat(), 'status': 'preparing'}
 state['code_commit'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
 
@@ -77,9 +80,9 @@ try:
     baseline = yaml.safe_load((root/'config/assignment2_ppo.yaml').read_text(encoding='utf-8-sig'))
     experiment = yaml.safe_load((root/args.config).read_text(encoding='utf-8-sig'))
     expected = json.loads(json.dumps(baseline))
-    expected['behaviors']['RollingControl']['hyperparameters']['batch_size'] = 512
+    expected['behaviors']['RollingControl']['hyperparameters']['batch_size'] = args.batch_size
     if experiment != expected:
-        raise RuntimeError('This experiment must change only batch_size to 512')
+        raise RuntimeError('This experiment must change only batch_size to '+str(args.batch_size))
     state['config_sha256'] = hashlib.sha256((root/args.config).read_bytes()).hexdigest()
     trainlog = record/'trainer.log'
     cmd = [sys.executable, '-u', '-m', 'mlagents.trainers.learn', args.config,
@@ -132,33 +135,36 @@ try:
     unity.wait(timeout=900)
     if unity.returncode != 0:
         raise RuntimeError('Evaluation failed, exit code '+str(unity.returncode))
-    comparison = {'B0':summarize(root/'records/Simple/B0_evaluation_20261110/rounds.csv'),
-                  'E1':summarize(record/'evaluation_rounds.csv')}
+    comparison = {'B0':summarize(root/'records/Simple/Team1_Simple_E1_batch512_seed1_attempt3/B0_verified_rounds.csv'),
+                  args.experiment:summarize(record/'evaluation_rounds.csv')}
     from tensorboard.backend.event_processing.event_accumulator import EventAccumulator
     curves={}
-    for label,run in [('B0','Team1_Simple_B0_seed1'),('E1',args.run_id)]:
+    for label,run in [('B0','Team1_Simple_B0_seed1'),(args.experiment,args.run_id)]:
         accumulator=EventAccumulator(str(root/'results'/run/'RollingControl'))
         accumulator.Reload()
         curves[label]={tag:[{'step':v.step,'value':v.value} for v in accumulator.Scalars(tag)]
                        for tag in ['Environment/Cumulative Reward','Environment/Episode Length','Policy/Entropy']}
     (record/'training_curves.json').write_text(json.dumps(curves,indent=2),encoding='utf-8')
-    for label in ['B0','E1']:
+    for label in ['B0',args.experiment]:
         reward=curves[label]['Environment/Cumulative Reward']
         comparison[label]['reward_at_steps']={str(n):next((v['value'] for v in reward if v['step']==n),None)
                                                 for n in [100000,200000,300000,500000]}
     (record/'comparison.json').write_text(json.dumps(comparison,indent=2),encoding='utf-8')
-    lines=['Simple E1 automatic comparison','Only batch_size changed: 1024 -> 512.',
+    lines=['Simple '+args.experiment+' automatic comparison','Only batch_size changed: 1024 -> '+str(args.batch_size)+'.',
            'Evaluation: Simple, ConservativeCenter, fixed spawns, seed 1, CPU inference, 10 rounds.',
            'Only 10 evaluation rounds and one training seed; do not infer a reliable general improvement.']
     for label,data in comparison.items():
         lines.append(label+': '+json.dumps(data,ensure_ascii=False))
-    lines.append('Review curves and gameplay before selecting Simple_Final. E1 is a candidate, not an automatic replacement for B0.')
+    lines.append('Review curves and gameplay before selecting Simple_Final. The new model is a candidate, not an automatic replacement for B0.')
     (record/'comparison.txt').write_text('\n'.join(lines),encoding='utf-8')
     save_status('complete', comparison=comparison)
 except Exception as exc:
     save_status('failed', error=str(exc))
     if trainer is not None and trainer.poll() is None:
-        trainer.terminate()
+        if os.name == 'nt':
+            subprocess.run(['taskkill', '/PID', str(trainer.pid), '/T', '/F'], capture_output=True)
+        else:
+            trainer.terminate()
         trainer.wait(timeout=30)
     stop_editor()
     raise

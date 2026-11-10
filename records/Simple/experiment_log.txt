@@ -1,0 +1,48 @@
+Simple 实验记录
+
+负责人：待填写
+分支：simple
+共同条件：原 Simple 场景、ConservativeCenter 对手、固定出生位置、原始奖励、
+Decision Period=10、PPO、seed=1、从头训练，计划 500000 步。
+逐局评估使用 CPU 推理、seed=1、10 局。平均时长包含所有已完成回合。
+种子数和评估局数有限；结果不能直接说明所有随机种子下都更好。
+
+【B0】
+Run ID：Team1_Simple_B0_seed1
+配置：config/assignment2_ppo.yaml，batch_size=1024
+实际步数：500002
+训练奖励（TensorBoard，100k/200k/300k/500k）：-0.9419 / 0.0279 / 0.7001 / 0.8694
+正式同协议复测：9 胜、0 平、1 负；平均时长 2.12 秒；平均评估奖励 0.6949。
+证据：records/Simple/Team1_Simple_E1_batch512_seed1_attempt3/B0_verified_rounds.csv
+说明：最初先导评估的 10 胜记录保留；正式结论使用后续修正运行器的同协议复测。
+
+【E1：batch_size=512】
+Run ID：Team1_Simple_E1_batch512_seed1_attempt3
+配置：config/simple_e1_batch512.yaml
+代码起点：fa3693626d295b41040165491a310af4a2ff18d4
+问题与依据：B0 最终已能获胜，但学习前期较慢，约 10 万步奖励仍为负。
+假设：较小的 minibatch 可能提高相同环境步数下的学习效率。
+唯一修改：batch_size 1024 -> 512。不是在 B0 模型上续训。
+实际步数：500006；训练日志 elapsed=2070.226 秒，约 34.5 分钟。
+训练奖励（100k/200k/300k/500k）：-0.8574 / 0.4596 / 0.8355 / 0.9069
+评估：10 胜、0 平、0 负；平均时长 1.86 秒；平均评估奖励 0.9079。
+结论：在本次 seed=1 下，中期奖励和最终奖励高于 B0，支持学习效率改善的假设。
+评估胜率从 9/10 到 10/10，仅差一局；不能据此认定稳定或显著优于 B0。
+保留为候选模型，尚未指定为 Simple_Final。
+模型：results/Team1_Simple_E1_batch512_seed1_attempt3/RollingControl.onnx
+曲线：records/Simple/Team1_Simple_E1_batch512_seed1_attempt3/training_curves.json
+评估与结论：同目录 evaluation_rounds.csv、verified_comparison.json、verified_comparison.txt
+启动来源：第一次未产生步数，第二次端口占用；两次启动失败记录均保留，不计作模型实验。
+
+【E2：batch_size=256，启动计划】
+Run ID：Team1_Simple_E2_batch256_seed1
+配置：config/simple_e2_batch256.yaml
+依据：E1 将批量从 1024 降到 512 后，中期奖励明显提高，值得测试进一步减小的边际效果。
+假设：batch_size=256 可能进一步提高学习效率，也可能因更新噪声增大而降低稳定性。
+唯一修改因素：相对 B0，batch_size 1024 -> 256；相对 E1，512 -> 256。
+训练：从头训练、seed=1、500000 步，不继承 E1 权重；其他配置与 B0 相同。
+比较：先对照 B0，再对照 E1 的 100k/200k/300k/500k 奖励与相同规则下的胜平负、时长。
+结果和结论：尚未完成，不预填。
+记录目录：records/Simple/Team1_Simple_E2_batch256_seed1/
+训练结束后自动生成模型、曲线、10 局评估和 verified_comparison.json。
+以 status.json 和 comparison_verification.json 均为 complete 判断完整流程完成。

@@ -1,0 +1,23 @@
+{
+  "run_id": "Team1_Simple_E1_batch512_seed1_attempt2",
+  "config": "config/simple_e1_batch512.yaml",
+  "seed": 1,
+  "budget_steps": 500000,
+  "start_utc": "2026-11-10T10:27:15.170234+00:00",
+  "status": "failed",
+  "code_commit": "fa3693626d295b41040165491a310af4a2ff18d4",
+  "config_sha256": "e31dda4a975dcdd2bebcda29bde238d2daef1b196f17b2ece0460dd9d47e4bd7",
+  "training_command": [
+    "C:\\Users\\26349\\miniconda3\\envs\\mlagents\\python.exe",
+    "-u",
+    "-m",
+    "mlagents.trainers.learn",
+    "config/simple_e1_batch512.yaml",
+    "--run-id=Team1_Simple_E1_batch512_seed1_attempt2",
+    "--seed=1",
+    "--timeout-wait=300"
+  ],
+  "updated_utc": "2026-11-10T10:27:21.257357+00:00",
+  "trainer_pid": 40096,
+  "error": "Trainer exited before listening; inspect trainer.log"
+}

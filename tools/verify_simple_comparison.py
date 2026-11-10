@@ -1,4 +1,4 @@
-"""Re-evaluate B0 with the same corrected runner used for E1 after training ends."""
+"""Re-evaluate B0 with the same corrected runner used for the candidate."""
 import argparse
 import csv
 import json
@@ -15,7 +15,7 @@ folder=root/'records/Simple'/args.run_id
 audit=folder/'comparison_verification.json'
 def status(value,**kw):
     audit.write_text(json.dumps({'status':value,**kw},indent=2),encoding='utf-8')
-status('waiting_for_training_and_E1_evaluation')
+status('waiting_for_training_and_candidate_evaluation')
 try:
     deadline=time.monotonic()+12000
     while True:
