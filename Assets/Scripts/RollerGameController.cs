@@ -28,6 +28,9 @@ public class RollerGameController : MonoBehaviour
     public int PlayerWins  { get; private set; }
     public int TotalRounds { get; private set; }
 
+    // Optional experiment observer. Does not change rewards, resets or physics.
+    public event System.Action<bool, bool, bool, float> RoundCompleted;
+
     private void Awake()
     {
         if (AgentA == null || AgentB == null)
@@ -108,6 +111,7 @@ public class RollerGameController : MonoBehaviour
             if (playerAgent == AgentA) PlayerWins++;
         }
 
+        RoundCompleted?.Invoke(aFell, bFell, timedOut, Time.time - episodeStartTime);
         AgentA.EndEpisode();
         AgentB.EndEpisode();
     }

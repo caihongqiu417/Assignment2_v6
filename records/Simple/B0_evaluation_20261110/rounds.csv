@@ -1,0 +1,11 @@
+round,outcome,duration_seconds,player_fell,opponent_fell,timed_out,player_reward,player_x,player_z,opponent_x,opponent_z
+1,W,1.7800,False,True,False,0.911000,-5.0506,0.4602,-8.9670,0.6751
+2,W,1.8800,False,True,False,0.907000,-3.8759,-0.0192,-6.6868,1.0452
+3,W,2.1200,False,True,False,0.895000,-4.5674,0.1325,-5.5460,0.1169
+4,W,1.8000,False,True,False,0.911000,-4.5229,0.3197,-7.7694,1.8997
+5,W,1.7800,False,True,False,0.912000,-4.6072,0.2835,-7.9266,0.0530
+6,W,1.8800,False,True,False,0.907000,-4.6871,0.3723,-6.9016,-1.1362
+7,W,1.9400,False,True,False,0.904000,-3.2952,0.6228,-7.3348,-0.4094
+8,W,1.7800,False,True,False,0.912000,-4.5950,0.0539,-7.8306,-0.2088
+9,W,1.8200,False,True,False,0.910000,-4.6972,0.3816,-8.1183,0.1986
+10,W,1.8200,False,True,False,0.910000,-3.4220,0.2825,-7.1887,0.1518

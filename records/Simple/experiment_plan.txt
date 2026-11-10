@@ -1,0 +1,46 @@
+Simple E1 实验计划（2026-11-10）
+
+实验编号：Simple_E1_batch512
+Run ID：Team1_Simple_E1_batch512_seed1
+对照：Team1_Simple_B0_seed1，已有 500002 步模型，保留不覆盖。
+
+现有证据：
+1. B0 的奖励在约 10 万步仍为负，约 20 万步转正，后期达到约 0.87。
+2. 本次原 Simple 场景自动评估 10 局，10 胜、0 平、0 负，平均时长 1.86 秒。
+3. 未发现最终模型明显失败，实验研究目标是学习效率，而不是虚构现有性能缺陷。
+
+假设：当前使用离散动作。将 minibatch 从 1024 减至 512，可能在相同环境步数下
+更早获得较高奖励，并保持最终胜率。也可能因更新噪声和更多梯度步骤而变差或更慢。
+官方解释参考：https://docs.unity3d.com/Packages/com.unity.ml-agents@4.0/manual/Training-Configuration-File.html
+参考的是 batch_size 的通用含义；继续使用现有课程环境，不升级 ML-Agents。
+
+唯一学习因素：batch_size 1024 -> 512。
+配置：config/simple_e1_batch512.yaml，原始 assignment2_ppo.yaml 不修改。
+保持：buffer_size=10240、learning_rate=0.0003、beta=0.005、PPO、网络 128x2、
+奖励（获胜+1、掉落-1、动作步-0.001）、DecisionPeriod=10、seed=1、500000 步。
+训练起点：从头训练，不使用迁移、不 resume、不 force。
+场景：Simple；固定 XZ 出生点 Player=(2,0)、Enemy=(0,0)。
+对手：HeuristicOnly / ConservativeCenter。
+训练：玩家 Default，无模型；训练时间缩放沿用 B0 的训练器默认值 20。
+
+评估协议：
+使用原始 Simple 场景，InferenceOnly、CPU、推理 seed=1、时间缩放=1。
+每个模型 10 局；对手、出生点、奖励和回合时限相同。
+原有控制器超时 10 秒且双方未落下算平局；双方同时落下也记平局。
+时长使用 Time.time 秒数，不把 TensorBoard 的 Episode Length 当秒数。
+结束回合时记录胜平负、双方是否掉落、超时、奖励和终点坐标。
+这是数值评估，不代替可视化回放的行为观察。只有 10 局、单一训练种子，结论有限。
+
+比较指标：100k、200k、300k 和 500k 步奖励，完整训练曲线，最终胜平负和平均时长。
+模型改善由证据判断；新模型不会自动标为 Final。
+
+自动化记录：
+RollerGameController 仅新增可选 RoundCompleted 事件，结算后通知观察者。
+原有奖励、终止、出生和物理计算均未修改；训练时事件无订阅者。
+Assets/Editor/SimpleExperimentRunner.cs 在内存中设置玩家模式，不保存修改后的场景。
+tools/run_simple_experiment.py 负责训练、停止自动 Unity 实例、导出模型后的同协议评估。
+结果目录：results/Team1_Simple_E1_batch512_seed1/
+记录目录：records/Simple/Team1_Simple_E1_batch512_seed1/
+查看 status.json 可确认 training / evaluating / complete / failed。
+训练完成后自动生成 comparison.json、comparison.txt、training_curves.json。
+运行中不切换分支，不再用另一 Unity 编辑器打开同一项目。
