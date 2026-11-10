@@ -1,5 +1,5 @@
 # Raw Unity editor diagnostics stay local; model and TensorBoard logs remain tracked.
 unity*.log
-supervisor.log
+supervisor*.log
 *.signal
 status.tmp

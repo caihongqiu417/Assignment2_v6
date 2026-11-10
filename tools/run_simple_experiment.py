@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 p = argparse.ArgumentParser()
 p.add_argument('--unity', required=True)
 p.add_argument('--config', default='config/simple_e1_batch512.yaml')
-p.add_argument('--run-id', default='Team1_Simple_E1_batch512_seed1')
+p.add_argument('--run-id', default='Team1_Simple_E1_batch512_seed1_attempt2')
 args = p.parse_args()
 root = Path(__file__).resolve().parents[1]
 record = root / 'records' / 'Simple' / args.run_id

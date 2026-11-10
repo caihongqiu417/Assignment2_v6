@@ -1,0 +1,24 @@
+{
+  "run_id": "Team1_Simple_E1_batch512_seed1",
+  "config": "config/simple_e1_batch512.yaml",
+  "seed": 1,
+  "budget_steps": 500000,
+  "start_utc": "2026-11-10T10:25:07.242338+00:00",
+  "status": "failed",
+  "code_commit": "192830bcfe2fd5ef8360924907288c7b49345ebe",
+  "config_sha256": "e31dda4a975dcdd2bebcda29bde238d2daef1b196f17b2ece0460dd9d47e4bd7",
+  "training_command": [
+    "C:\\Users\\26349\\miniconda3\\envs\\mlagents\\python.exe",
+    "-u",
+    "-m",
+    "mlagents.trainers.learn",
+    "config/simple_e1_batch512.yaml",
+    "--run-id=Team1_Simple_E1_batch512_seed1",
+    "--seed=1",
+    "--timeout-wait=300"
+  ],
+  "updated_utc": "2026-11-10T10:26:41.516236+00:00",
+  "trainer_pid": 44512,
+  "unity_pid": 1988,
+  "error": "Unity exited during training; inspect unity_training.log"
+}

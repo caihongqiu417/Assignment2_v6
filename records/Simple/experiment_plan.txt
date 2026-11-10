@@ -1,7 +1,7 @@
 Simple E1 实验计划（2026-11-10）
 
 实验编号：Simple_E1_batch512
-Run ID：Team1_Simple_E1_batch512_seed1
+Run ID：Team1_Simple_E1_batch512_seed1_attempt2
 对照：Team1_Simple_B0_seed1，已有 500002 步模型，保留不覆盖。
 
 现有证据：
@@ -39,8 +39,13 @@ RollerGameController 仅新增可选 RoundCompleted 事件，结算后通知观�
 原有奖励、终止、出生和物理计算均未修改；训练时事件无订阅者。
 Assets/Editor/SimpleExperimentRunner.cs 在内存中设置玩家模式，不保存修改后的场景。
 tools/run_simple_experiment.py 负责训练、停止自动 Unity 实例、导出模型后的同协议评估。
-结果目录：results/Team1_Simple_E1_batch512_seed1/
-记录目录：records/Simple/Team1_Simple_E1_batch512_seed1/
+结果目录：results/Team1_Simple_E1_batch512_seed1_attempt2/
+记录目录：records/Simple/Team1_Simple_E1_batch512_seed1_attempt2/
 查看 status.json 可确认 training / evaluating / complete / failed。
 训练完成后自动生成 comparison.json、comparison.txt、training_curves.json。
 运行中不切换分支，不再用另一 Unity 编辑器打开同一项目。
+
+启动排查记录：首次 Team1_Simple_E1_batch512_seed1 仅完成通信连接，未产生训练步数。
+主动停止启动尝试时 Unity 在退出过程中崩溃。保留原始诊断记录，不当作训练实验结果。
+自动启动器已补充 Prefab 属性覆盖记录和运行时模式校验，避免编辑器进入 Play 后丢失临时设置。
+attempt2 仍为 seed=1、同一批量大小实验，不代表第二个训练种子。

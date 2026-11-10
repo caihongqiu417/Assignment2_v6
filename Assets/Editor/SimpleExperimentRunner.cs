@@ -61,6 +61,13 @@ public static class SimpleExperimentRunner
             behavior.Model = null;
             behavior.BehaviorType = BehaviorType.Default;
         }
+        // Persist temporary prefab overrides across the Play Mode domain reload.
+        // Merely calling the setters is not enough for prefab instances.
+        EditorUtility.SetDirty(behavior);
+        EditorUtility.SetDirty(enemy.GetComponent<BehaviorParameters>());
+        PrefabUtility.RecordPrefabInstancePropertyModifications(behavior);
+        PrefabUtility.RecordPrefabInstancePropertyModifications(enemy.GetComponent<BehaviorParameters>());
+        EditorSceneManager.MarkSceneDirty(player.gameObject.scene);
         Debug.Log("EXPERIMENT_READY mode=" + Arg("-experiment-mode") + " opponent=" + enemy.heuristicMode);
         EditorApplication.isPlaying = true;
     }
@@ -76,7 +83,24 @@ public static class SimpleExperimentRunner
 
     static void OnPlayState(PlayModeStateChange state)
     {
-        if (state != PlayModeStateChange.EnteredPlayMode || Arg("-experiment-mode") != "eval") return;
+        if (state != PlayModeStateChange.EnteredPlayMode || Arg("-experiment-mode") == "") return;
+        var activeBehavior = GameObject.Find("Player").GetComponent<BehaviorParameters>();
+        Debug.Log("EXPERIMENT_PLAYING behavior=" + activeBehavior.BehaviorType + " model=" + activeBehavior.Model);
+        if (Arg("-experiment-mode") != "eval")
+        {
+            if (activeBehavior.BehaviorType != BehaviorType.Default || activeBehavior.Model != null)
+            {
+                Debug.LogError("Training behavior did not survive Play Mode reload");
+                EditorApplication.Exit(3);
+            }
+            return;
+        }
+        if (activeBehavior.BehaviorType != BehaviorType.InferenceOnly || activeBehavior.Model == null)
+        {
+            Debug.LogError("Evaluation model did not survive Play Mode reload");
+            EditorApplication.Exit(3);
+            return;
+        }
         var controller = UnityEngine.Object.FindObjectOfType<RollerGameController>();
         string path = Arg("-experiment-output");
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
