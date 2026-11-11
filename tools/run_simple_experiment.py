@@ -22,6 +22,7 @@ p.add_argument('--config', required=True)
 p.add_argument('--run-id', required=True)
 p.add_argument('--experiment', default='E1')
 p.add_argument('--batch-size', type=int, choices=[256, 512], default=512)
+p.add_argument('--seed', type=int, default=1)
 args = p.parse_args()
 root = Path(__file__).resolve().parents[1]
 record = root / 'records' / 'Simple' / args.run_id
@@ -36,7 +37,7 @@ env = dict(os.environ, PYTHONIOENCODING='utf-8', PYTHONUNBUFFERED='1')
 flags = subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0
 trainer = None
 unity = None
-state = {'run_id': args.run_id, 'config': args.config, 'seed': 1, 'budget_steps': 500000,
+state = {'run_id': args.run_id, 'config': args.config, 'seed': args.seed, 'budget_steps': 500000,
          'experiment': args.experiment, 'batch_size': args.batch_size,
          'start_utc': datetime.now(timezone.utc).isoformat(), 'status': 'preparing'}
 state['code_commit'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
@@ -86,7 +87,7 @@ try:
     state['config_sha256'] = hashlib.sha256((root/args.config).read_bytes()).hexdigest()
     trainlog = record/'trainer.log'
     cmd = [sys.executable, '-u', '-m', 'mlagents.trainers.learn', args.config,
-           '--run-id='+args.run_id, '--seed=1', '--timeout-wait=300']
+           '--run-id='+args.run_id, '--seed='+str(args.seed), '--timeout-wait=300']
     state['training_command'] = cmd
     with trainlog.open('w', encoding='utf-8') as tf:
         trainer = subprocess.Popen(cmd, cwd=root, env=env, stdout=tf, stderr=subprocess.STDOUT, creationflags=flags)
@@ -151,6 +152,7 @@ try:
                                                 for n in [100000,200000,300000,500000]}
     (record/'comparison.json').write_text(json.dumps(comparison,indent=2),encoding='utf-8')
     lines=['Simple '+args.experiment+' automatic comparison','Only batch_size changed: 1024 -> '+str(args.batch_size)+'.',
+           'Training seed: '+str(args.seed)+'; baseline training seed: 1. Different seeds are not a paired parameter comparison.',
            'Evaluation: Simple, ConservativeCenter, fixed spawns, seed 1, CPU inference, 10 rounds.',
            'Only 10 evaluation rounds and one training seed; do not infer a reliable general improvement.']
     for label,data in comparison.items():

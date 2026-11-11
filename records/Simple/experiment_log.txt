@@ -3,7 +3,7 @@ Simple 实验记录
 负责人：待填写
 分支：simple
 共同条件：原 Simple 场景、ConservativeCenter 对手、固定出生位置、原始奖励、
-Decision Period=10、PPO、seed=1、从头训练，计划 500000 步。
+Decision Period=10、PPO、从头训练，计划 500000 步；B0/E1/E2 首次训练 seed=1，重复实验另注明。
 逐局评估使用 CPU 推理、seed=1、10 局。平均时长包含所有已完成回合。
 种子数和评估局数有限；结果不能直接说明所有随机种子下都更好。
 
@@ -34,7 +34,7 @@ Run ID：Team1_Simple_E1_batch512_seed1_attempt3
 评估与结论：同目录 evaluation_rounds.csv、verified_comparison.json、verified_comparison.txt
 启动来源：第一次未产生步数，第二次端口占用；两次启动失败记录均保留，不计作模型实验。
 
-【E2：batch_size=256，启动计划】
+【E2：batch_size=256，已完成】
 Run ID：Team1_Simple_E2_batch256_seed1
 配置：config/simple_e2_batch256.yaml
 依据：E1 将批量从 1024 降到 512 后，中期奖励明显提高，值得测试进一步减小的边际效果。
@@ -42,7 +42,21 @@ Run ID：Team1_Simple_E2_batch256_seed1
 唯一修改因素：相对 B0，batch_size 1024 -> 256；相对 E1，512 -> 256。
 训练：从头训练、seed=1、500000 步，不继承 E1 权重；其他配置与 B0 相同。
 比较：先对照 B0，再对照 E1 的 100k/200k/300k/500k 奖励与相同规则下的胜平负、时长。
-结果和结论：尚未完成，不预填。
+实际步数：500003；训练日志 elapsed=2085.777 秒，约 34.8 分钟。
+训练奖励（100k/200k/300k/500k）：-0.6692 / 0.5124 / 0.8384 / 0.9070。
+评估：10 胜、0 平、0 负；平均时长 1.858 秒，平均奖励 0.9080。
+本次 B0 同协议复测：10 胜、0 平、0 负，平均时长 1.860 秒，平均奖励 0.9079。
+结论：E2 前期学习快于 E1，但最终训练奖励及评估表现非常接近，不足以证明 E2 最终更强。
+B0 两次同协议复测分别为 9 胜和 10 胜，说明评估有波动；保留全部记录，不挑选有利结果。
 记录目录：records/Simple/Team1_Simple_E2_batch256_seed1/
 训练结束后自动生成模型、曲线、10 局评估和 verified_comparison.json。
 以 status.json 和 comparison_verification.json 均为 complete 判断完整流程完成。
+
+【E2 重复验证：seed=2，待训练】
+Run ID：Team1_Simple_E2_batch256_seed2
+配置：config/simple_e2_batch256.yaml；batch_size=256。
+目的：验证 E2 的学习曲线能否在另一训练随机种子下复现，不是新增参数改进。
+相对 E2 seed=1 唯一变化：训练 seed=2；从头训练 500000 步，不继承模型。
+评估协议仍为 seed=1、CPU 推理、10 局，与既有评估一致。
+比较：对照 E2 seed=1 的曲线与最终评估；不同训练种子间的 B0 对照只作描述，不作严格配对结论。
+结果：待完成；模型、日志和逐局结果保存在同名 results/ 与 records/Simple/ 目录。

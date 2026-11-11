@@ -1,0 +1,7 @@
+Simple E2 automatic comparison
+Only batch_size changed: 1024 -> 256.
+Evaluation: Simple, ConservativeCenter, fixed spawns, seed 1, CPU inference, 10 rounds.
+Only 10 evaluation rounds and one training seed; do not infer a reliable general improvement.
+B0: {"rounds": 10, "wins": 9, "draws": 0, "losses": 1, "mean_duration_seconds": 2.12, "mean_reward": 0.6949, "reward_at_steps": {"100000": -0.941919207572937, "200000": 0.027864964678883553, "300000": 0.7001000046730042, "500000": 0.8693613409996033}}
+E2: {"rounds": 10, "wins": 10, "draws": 0, "losses": 0, "mean_duration_seconds": 1.858, "mean_reward": 0.9080000000000001, "reward_at_steps": {"100000": -0.6692187786102295, "200000": 0.5123845934867859, "300000": 0.8383798599243164, "500000": 0.907002866268158}}
+Review curves and gameplay before selecting Simple_Final. The new model is a candidate, not an automatic replacement for B0.

@@ -1,0 +1,110 @@
+{
+    "RollingControl": {
+        "checkpoints": [
+            {
+                "steps": 99998,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-99998.onnx",
+                "reward": -0.6134905103494912,
+                "creation_time": 1794311354.3563032,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-99998.pt"
+                ]
+            },
+            {
+                "steps": 149986,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-149986.onnx",
+                "reward": -0.04876247002703933,
+                "creation_time": 1794311550.269861,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-149986.pt"
+                ]
+            },
+            {
+                "steps": 199995,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-199995.onnx",
+                "reward": 0.527502968375172,
+                "creation_time": 1794311767.3427541,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-199995.pt"
+                ]
+            },
+            {
+                "steps": 249995,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-249995.onnx",
+                "reward": 0.8082200581973424,
+                "creation_time": 1794311987.4652882,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-249995.pt"
+                ]
+            },
+            {
+                "steps": 299974,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-299974.onnx",
+                "reward": 0.8579581556958633,
+                "creation_time": 1794312193.1445682,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-299974.pt"
+                ]
+            },
+            {
+                "steps": 349993,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-349993.onnx",
+                "reward": 0.9054692286711473,
+                "creation_time": 1794312397.5487173,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-349993.pt"
+                ]
+            },
+            {
+                "steps": 399995,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-399995.onnx",
+                "reward": 0.9116666714350382,
+                "creation_time": 1794312604.0274744,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-399995.pt"
+                ]
+            },
+            {
+                "steps": 449995,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-449995.onnx",
+                "reward": 0.9049684550107842,
+                "creation_time": 1794312811.1206112,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-449995.pt"
+                ]
+            },
+            {
+                "steps": 499993,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-499993.onnx",
+                "reward": 0.9060024240981003,
+                "creation_time": 1794313021.802347,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-499993.pt"
+                ]
+            },
+            {
+                "steps": 500003,
+                "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-500003.onnx",
+                "reward": 0.9060036302910174,
+                "creation_time": 1794313021.8343809,
+                "auxillary_file_paths": [
+                    "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-500003.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500003,
+            "file_path": "results\\Team1_Simple_E2_batch256_seed1\\RollingControl.onnx",
+            "reward": 0.9060036302910174,
+            "creation_time": 1794313021.8343809,
+            "auxillary_file_paths": [
+                "results\\Team1_Simple_E2_batch256_seed1\\RollingControl\\RollingControl-500003.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.2.0.dev0",
+        "torch_version": "2.2.1+cpu"
+    }
+}

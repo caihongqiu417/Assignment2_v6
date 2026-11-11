@@ -1,0 +1,33 @@
+Use this verified comparison instead of the earlier pilot comparison.
+{
+  "B0": {
+    "rounds": 10,
+    "wins": 10,
+    "draws": 0,
+    "losses": 0,
+    "mean_duration_seconds": 1.8599999999999999,
+    "mean_reward": 0.9079,
+    "reward_at_steps": {
+      "100000": -0.941919207572937,
+      "200000": 0.027864964678883553,
+      "300000": 0.7001000046730042,
+      "500000": 0.8693613409996033
+    }
+  },
+  "E2": {
+    "rounds": 10,
+    "wins": 10,
+    "draws": 0,
+    "losses": 0,
+    "mean_duration_seconds": 1.858,
+    "mean_reward": 0.9080000000000001,
+    "reward_at_steps": {
+      "100000": -0.6692187786102295,
+      "200000": 0.5123845934867859,
+      "300000": 0.8383798599243164,
+      "500000": 0.907002866268158
+    }
+  },
+  "protocol": "Same corrected Unity runner; CPU inference, seed 1, 10 rounds, Simple original opponent and spawns."
+}
+One seed and ten rounds are limited evidence; review before selecting Final.
