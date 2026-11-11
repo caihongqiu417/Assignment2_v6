@@ -52,11 +52,27 @@ B0 两次同协议复测分别为 9 胜和 10 胜，说明评估有波动；保�
 训练结束后自动生成模型、曲线、10 局评估和 verified_comparison.json。
 以 status.json 和 comparison_verification.json 均为 complete 判断完整流程完成。
 
-【E2 重复验证：seed=2，待训练】
+【E2 重复验证：seed=2，已完成】
 Run ID：Team1_Simple_E2_batch256_seed2
 配置：config/simple_e2_batch256.yaml；batch_size=256。
 目的：验证 E2 的学习曲线能否在另一训练随机种子下复现，不是新增参数改进。
 相对 E2 seed=1 唯一变化：训练 seed=2；从头训练 500000 步，不继承模型。
 评估协议仍为 seed=1、CPU 推理、10 局，与既有评估一致。
 比较：对照 E2 seed=1 的曲线与最终评估；不同训练种子间的 B0 对照只作描述，不作严格配对结论。
-结果：待完成；模型、日志和逐局结果保存在同名 results/ 与 records/Simple/ 目录。
+实际步数：500002；训练日志 elapsed=2065.235 秒，约 34.4 分钟。
+训练奖励（100k/200k/300k/500k）：-0.8187 / 0.6853 / 0.8922 / 0.9092。
+评估：10 胜、0 平、0 负，平均时长 1.888 秒，平均奖励 0.9065。
+本次 B0 seed=1 模型复测：10 胜，平均时长 1.860 秒，平均奖励 0.9079。
+结论：E2 在两个训练种子下都学到有效策略，最终奖励接近；不能据此证明对战强于 B0。
+证据：records/Simple/Team1_Simple_E2_batch256_seed2/verified_comparison.json、training_curves.json。
+模型：results/Team1_Simple_E2_batch256_seed2/RollingControl.onnx。
+
+【第 5 轮：基线重复验证 seed=2，待训练】
+Run ID：Team1_Simple_B0_seed2
+配置：config/assignment2_ppo.yaml，原始 batch_size=1024。
+目的：补齐与 E2 seed=2 相同训练种子的基线，检查较小 batch_size 的学习效率优势是否复现。
+从头训练 500000 步，seed=2，不继承任何模型；原奖励、场景、对手均不变。
+与 E2 seed=2 的唯一配置差异：batch_size 1024 与 256。
+评估：seed=1、CPU 推理、10 局；比较中期和最终训练奖励、胜平负及每局时长。
+两组各有两个训练种子仍属有限证据，不声称统计显著性。原作业 seed=1 的 B0 保留。
+结果：待完成；完成后同名记录目录生成 paired_seed2_comparison.json。

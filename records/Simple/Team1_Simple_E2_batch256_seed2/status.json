@@ -1,0 +1,57 @@
+{
+  "run_id": "Team1_Simple_E2_batch256_seed2",
+  "config": "config/simple_e2_batch256.yaml",
+  "seed": 2,
+  "budget_steps": 500000,
+  "experiment": "E2_seed2",
+  "batch_size": 256,
+  "start_utc": "2026-11-11T10:20:48.711618+00:00",
+  "status": "complete",
+  "code_commit": "e44a1f76d2de455ab037d0774c7e49f4023aadf7",
+  "config_sha256": "437e537fdc2b1ca9681c20f295ae4a885fa82cb8b48901efc84734987b202154",
+  "training_command": [
+    "C:\\Users\\26349\\miniconda3\\envs\\mlagents\\python.exe",
+    "-u",
+    "-m",
+    "mlagents.trainers.learn",
+    "config/simple_e2_batch256.yaml",
+    "--run-id=Team1_Simple_E2_batch256_seed2",
+    "--seed=2",
+    "--timeout-wait=300"
+  ],
+  "updated_utc": "2026-11-11T10:55:54.884158+00:00",
+  "trainer_pid": 672,
+  "unity_pid": 31720,
+  "step": 500002,
+  "training_reward": 0.9086455289666812,
+  "comparison": {
+    "B0": {
+      "rounds": 10,
+      "wins": 9,
+      "draws": 0,
+      "losses": 1,
+      "mean_duration_seconds": 2.12,
+      "mean_reward": 0.6949,
+      "reward_at_steps": {
+        "100000": -0.941919207572937,
+        "200000": 0.027864964678883553,
+        "300000": 0.7001000046730042,
+        "500000": 0.8693613409996033
+      }
+    },
+    "E2_seed2": {
+      "rounds": 10,
+      "wins": 10,
+      "draws": 0,
+      "losses": 0,
+      "mean_duration_seconds": 1.888,
+      "mean_reward": 0.9065,
+      "reward_at_steps": {
+        "100000": -0.8186914324760437,
+        "200000": 0.6853253245353699,
+        "300000": 0.8921889066696167,
+        "500000": 0.9091513752937317
+      }
+    }
+  }
+}

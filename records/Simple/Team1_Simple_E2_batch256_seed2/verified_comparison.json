@@ -1,0 +1,31 @@
+{
+  "B0": {
+    "rounds": 10,
+    "wins": 10,
+    "draws": 0,
+    "losses": 0,
+    "mean_duration_seconds": 1.8599999999999999,
+    "mean_reward": 0.9079,
+    "reward_at_steps": {
+      "100000": -0.941919207572937,
+      "200000": 0.027864964678883553,
+      "300000": 0.7001000046730042,
+      "500000": 0.8693613409996033
+    }
+  },
+  "E2_seed2": {
+    "rounds": 10,
+    "wins": 10,
+    "draws": 0,
+    "losses": 0,
+    "mean_duration_seconds": 1.888,
+    "mean_reward": 0.9065,
+    "reward_at_steps": {
+      "100000": -0.8186914324760437,
+      "200000": 0.6853253245353699,
+      "300000": 0.8921889066696167,
+      "500000": 0.9091513752937317
+    }
+  },
+  "protocol": "Same corrected Unity runner; CPU inference, seed 1, 10 rounds, Simple original opponent and spawns."
+}

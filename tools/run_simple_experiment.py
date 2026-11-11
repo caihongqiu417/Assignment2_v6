@@ -21,7 +21,7 @@ p.add_argument('--unity', required=True)
 p.add_argument('--config', required=True)
 p.add_argument('--run-id', required=True)
 p.add_argument('--experiment', default='E1')
-p.add_argument('--batch-size', type=int, choices=[256, 512], default=512)
+p.add_argument('--batch-size', type=int, choices=[256, 512, 1024], default=512)
 p.add_argument('--seed', type=int, default=1)
 args = p.parse_args()
 root = Path(__file__).resolve().parents[1]
@@ -151,7 +151,7 @@ try:
         comparison[label]['reward_at_steps']={str(n):next((v['value'] for v in reward if v['step']==n),None)
                                                 for n in [100000,200000,300000,500000]}
     (record/'comparison.json').write_text(json.dumps(comparison,indent=2),encoding='utf-8')
-    lines=['Simple '+args.experiment+' automatic comparison','Only batch_size changed: 1024 -> '+str(args.batch_size)+'.',
+    lines=['Simple '+args.experiment+' automatic comparison','Batch size: '+str(args.batch_size)+'; original baseline: 1024.',
            'Training seed: '+str(args.seed)+'; baseline training seed: 1. Different seeds are not a paired parameter comparison.',
            'Evaluation: Simple, ConservativeCenter, fixed spawns, seed 1, CPU inference, 10 rounds.',
            'Only 10 evaluation rounds and one training seed; do not infer a reliable general improvement.']
@@ -159,6 +159,12 @@ try:
         lines.append(label+': '+json.dumps(data,ensure_ascii=False))
     lines.append('Review curves and gameplay before selecting Simple_Final. The new model is a candidate, not an automatic replacement for B0.')
     (record/'comparison.txt').write_text('\n'.join(lines),encoding='utf-8')
+    if args.batch_size == 1024 and args.seed == 2:
+        source = root/'records/Simple/Team1_Simple_E2_batch256_seed2/verified_comparison.json'
+        paired = {'B0_seed2': comparison[args.experiment],
+                  'E2_seed2': json.loads(source.read_text(encoding='utf-8'))['E2_seed2'],
+                  'protocol': 'Training seed 2, same original configuration except batch_size 1024 versus 256; evaluation seed 1, CPU, 10 rounds.'}
+        (record/'paired_seed2_comparison.json').write_text(json.dumps(paired,indent=2),encoding='utf-8')
     save_status('complete', comparison=comparison)
 except Exception as exc:
     save_status('failed', error=str(exc))
