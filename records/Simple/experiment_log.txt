@@ -67,7 +67,7 @@ Run ID：Team1_Simple_E2_batch256_seed2
 证据：records/Simple/Team1_Simple_E2_batch256_seed2/verified_comparison.json、training_curves.json。
 模型：results/Team1_Simple_E2_batch256_seed2/RollingControl.onnx。
 
-【第 5 轮：基线重复验证 seed=2，待训练】
+【第 5 轮：基线重复验证 seed=2，已完成】
 Run ID：Team1_Simple_B0_seed2
 配置：config/assignment2_ppo.yaml，原始 batch_size=1024。
 目的：补齐与 E2 seed=2 相同训练种子的基线，检查较小 batch_size 的学习效率优势是否复现。
@@ -75,4 +75,14 @@ Run ID：Team1_Simple_B0_seed2
 与 E2 seed=2 的唯一配置差异：batch_size 1024 与 256。
 评估：seed=1、CPU 推理、10 局；比较中期和最终训练奖励、胜平负及每局时长。
 两组各有两个训练种子仍属有限证据，不声称统计显著性。原作业 seed=1 的 B0 保留。
-结果：待完成；完成后同名记录目录生成 paired_seed2_comparison.json。
+实际步数：500002；训练日志 elapsed=2268.470 秒，约 37.8 分钟。
+训练奖励（100k/200k/300k/500k）：-0.6877 / -0.3359 / 0.4029 / 0.7719。
+评估：10 胜、0 平、0 负，平均时长 2.356 秒，平均奖励 0.8831。
+相同训练 seed=2 对照：E2 在 200k/300k/500k 的奖励为 0.6853/0.8922/0.9092，均高于本轮基线。
+E2 的 100k 奖励较低（-0.8187 对 -0.6877），因此不能说所有阶段均更好。
+双方评估都是 10 胜，E2 平均时长 1.888 秒，比本轮基线短约 19.9%。
+结论：两个训练种子的中后期奖励都支持 batch_size=256 改善学习效率；本轮评估完成对战更快，但没有胜率优势。
+样本仅两个训练种子、每模型 10 局，结论限于当前 Simple 场景，不声称普遍或显著优势。
+证据：records/Simple/Team1_Simple_B0_seed2/paired_seed2_comparison.json、training_curves.json、evaluation_rounds.csv。
+模型：results/Team1_Simple_B0_seed2/RollingControl.onnx。
+训练与评估状态均为 complete；当前共完成 5 轮有效训练，尚未指定 Simple_Final。

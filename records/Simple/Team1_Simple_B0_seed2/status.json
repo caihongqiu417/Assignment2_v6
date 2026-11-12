@@ -1,0 +1,57 @@
+{
+  "run_id": "Team1_Simple_B0_seed2",
+  "config": "config/assignment2_ppo.yaml",
+  "seed": 2,
+  "budget_steps": 500000,
+  "experiment": "B0_seed2",
+  "batch_size": 1024,
+  "start_utc": "2026-11-11T11:15:32.485998+00:00",
+  "status": "complete",
+  "code_commit": "090f5b82334904c8fb47aacc3325ab64361596cb",
+  "config_sha256": "c4c48373430662ff871a8bda21b70a2a8c113dc6a31ae657f3f2fdb2eabeb5a4",
+  "training_command": [
+    "C:\\Users\\26349\\miniconda3\\envs\\mlagents\\python.exe",
+    "-u",
+    "-m",
+    "mlagents.trainers.learn",
+    "config/assignment2_ppo.yaml",
+    "--run-id=Team1_Simple_B0_seed2",
+    "--seed=2",
+    "--timeout-wait=300"
+  ],
+  "updated_utc": "2026-11-11T11:54:50.341845+00:00",
+  "trainer_pid": 26288,
+  "unity_pid": 15748,
+  "step": 500002,
+  "training_reward": 0.7734052699421343,
+  "comparison": {
+    "B0": {
+      "rounds": 10,
+      "wins": 9,
+      "draws": 0,
+      "losses": 1,
+      "mean_duration_seconds": 2.12,
+      "mean_reward": 0.6949,
+      "reward_at_steps": {
+        "100000": -0.941919207572937,
+        "200000": 0.027864964678883553,
+        "300000": 0.7001000046730042,
+        "500000": 0.8693613409996033
+      }
+    },
+    "B0_seed2": {
+      "rounds": 10,
+      "wins": 10,
+      "draws": 0,
+      "losses": 0,
+      "mean_duration_seconds": 2.3560000000000003,
+      "mean_reward": 0.8831000000000001,
+      "reward_at_steps": {
+        "100000": -0.6877056956291199,
+        "200000": -0.3358745276927948,
+        "300000": 0.402888685464859,
+        "500000": 0.7719181180000305
+      }
+    }
+  }
+}

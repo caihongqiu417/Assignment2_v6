@@ -1,0 +1,31 @@
+{
+  "B0_seed2": {
+    "rounds": 10,
+    "wins": 10,
+    "draws": 0,
+    "losses": 0,
+    "mean_duration_seconds": 2.3560000000000003,
+    "mean_reward": 0.8831000000000001,
+    "reward_at_steps": {
+      "100000": -0.6877056956291199,
+      "200000": -0.3358745276927948,
+      "300000": 0.402888685464859,
+      "500000": 0.7719181180000305
+    }
+  },
+  "E2_seed2": {
+    "rounds": 10,
+    "wins": 10,
+    "draws": 0,
+    "losses": 0,
+    "mean_duration_seconds": 1.888,
+    "mean_reward": 0.9065,
+    "reward_at_steps": {
+      "100000": -0.8186914324760437,
+      "200000": 0.6853253245353699,
+      "300000": 0.8921889066696167,
+      "500000": 0.9091513752937317
+    }
+  },
+  "protocol": "Training seed 2, same original configuration except batch_size 1024 versus 256; evaluation seed 1, CPU, 10 rounds."
+}

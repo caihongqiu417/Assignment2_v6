@@ -1,0 +1,8 @@
+Simple B0_seed2 automatic comparison
+Batch size: 1024; original baseline: 1024.
+Training seed: 2; baseline training seed: 1. Different seeds are not a paired parameter comparison.
+Evaluation: Simple, ConservativeCenter, fixed spawns, seed 1, CPU inference, 10 rounds.
+Only 10 evaluation rounds and one training seed; do not infer a reliable general improvement.
+B0: {"rounds": 10, "wins": 9, "draws": 0, "losses": 1, "mean_duration_seconds": 2.12, "mean_reward": 0.6949, "reward_at_steps": {"100000": -0.941919207572937, "200000": 0.027864964678883553, "300000": 0.7001000046730042, "500000": 0.8693613409996033}}
+B0_seed2: {"rounds": 10, "wins": 10, "draws": 0, "losses": 0, "mean_duration_seconds": 2.3560000000000003, "mean_reward": 0.8831000000000001, "reward_at_steps": {"100000": -0.6877056956291199, "200000": -0.3358745276927948, "300000": 0.402888685464859, "500000": 0.7719181180000305}}
+Review curves and gameplay before selecting Simple_Final. The new model is a candidate, not an automatic replacement for B0.
