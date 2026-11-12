@@ -1,0 +1,48 @@
+{
+  "source_checkpoint": {
+    "path": "results/Team01_Hard_E7_SafetyLambda_Lambda020_seed2/RollingControl/RollingControl-200018.pt",
+    "sha256": "341c998ed43f16b829482e3fd5e76bda0776dd26f8593b95c15e7db3dabf1d26",
+    "run_id": "Team01_Hard_E7_SafetyLambda_Lambda020_seed2",
+    "source_step": 200018,
+    "finite_tensors": 75,
+    "sections": [
+      "Optimizer:critic",
+      "Optimizer:value_optimizer",
+      "Policy",
+      "global_step"
+    ]
+  },
+  "training_seed": 4,
+  "arms": {
+    "Epsilon020": {
+      "run_id": "Team01_Hard_PPO_Epsilon_Backup_Epsilon020_seed4",
+      "steps": 200010,
+      "pt": "results/Team01_Hard_PPO_Epsilon_Backup_Epsilon020_seed4/RollingControl/RollingControl-200010.pt",
+      "pt_sha256": "81c4dd38e885872ebd266c33eec05370f756c831033c2544ee00036e1c60ffa7",
+      "model": "results/Team01_Hard_PPO_Epsilon_Backup_Epsilon020_seed4/RollingControl/RollingControl-200010.onnx",
+      "sha256": "88216fbe80ff56987dc51a358b2c4841ff052e118a07faeca7d8605d48b55f63",
+      "epsilon": 0.2,
+      "training_ledger_wdl": [
+        6784,
+        240,
+        1096
+      ],
+      "wall_seconds": 453.33
+    },
+    "Epsilon015": {
+      "run_id": "Team01_Hard_PPO_Epsilon_Backup_Epsilon015_seed4",
+      "steps": 200023,
+      "pt": "results/Team01_Hard_PPO_Epsilon_Backup_Epsilon015_seed4/RollingControl/RollingControl-200023.pt",
+      "pt_sha256": "19a09189b20593240a68408fe205ff7456cecf6b08053e268a990573a768f504",
+      "model": "results/Team01_Hard_PPO_Epsilon_Backup_Epsilon015_seed4/RollingControl/RollingControl-200023.onnx",
+      "sha256": "74f65a71aea4ba45bfe042fdc82672bed623d6b9cadcb82602a48b28279ebceb",
+      "epsilon": 0.15,
+      "training_ledger_wdl": [
+        6847,
+        227,
+        1223
+      ],
+      "wall_seconds": 422.17
+    }
+  }
+}

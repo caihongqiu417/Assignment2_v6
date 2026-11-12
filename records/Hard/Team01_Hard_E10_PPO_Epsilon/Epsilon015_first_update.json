@@ -1,0 +1,14 @@
+{
+  "policy_step": 10282,
+  "reported": {
+    "learning_rate": 0.000284577005141,
+    "beta": 0.004743464100000001,
+    "epsilon": 0.1474295
+  },
+  "adam_lr_before_update": [
+    7.710097429999983e-06
+  ],
+  "adam_lr_at_step": [
+    0.000284577005141
+  ]
+}

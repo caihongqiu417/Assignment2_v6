@@ -1,0 +1,203 @@
+{
+  "arm_totals": {
+    "Final": {
+      "wins": 151,
+      "draws": 11,
+      "losses": 38,
+      "win_rate": 0.755,
+      "contact_timeouts": 11,
+      "player_falls": 38,
+      "mean_seconds": 5.0363,
+      "median_seconds": 4.7,
+      "strictly_above_80_percent": false
+    },
+    "Epsilon020": {
+      "wins": 149,
+      "draws": 7,
+      "losses": 44,
+      "win_rate": 0.745,
+      "contact_timeouts": 7,
+      "player_falls": 44,
+      "mean_seconds": 4.9198,
+      "median_seconds": 4.64,
+      "strictly_above_80_percent": false
+    },
+    "Epsilon015": {
+      "wins": 157,
+      "draws": 8,
+      "losses": 35,
+      "win_rate": 0.785,
+      "contact_timeouts": 8,
+      "player_falls": 35,
+      "mean_seconds": 5.1007,
+      "median_seconds": 4.7,
+      "strictly_above_80_percent": false
+    }
+  },
+  "epsilon_factor": {
+    "control": "Epsilon020",
+    "candidate": "Epsilon015",
+    "gained_wins": 25,
+    "lost_wins": 17,
+    "net_wins": 8,
+    "win_rate_difference_pp": 4.0,
+    "transitions": {
+      "W": {
+        "W": 132,
+        "D": 3,
+        "L": 14
+      },
+      "D": {
+        "W": 4,
+        "D": 2,
+        "L": 1
+      },
+      "L": {
+        "W": 21,
+        "D": 3,
+        "L": 20
+      }
+    },
+    "seed_win_deltas": {
+      "2026112001": 1,
+      "2026112002": 2,
+      "2026112003": -2,
+      "2026112004": 1,
+      "2026112005": 0,
+      "2026112006": 2,
+      "2026112007": -2,
+      "2026112008": 3,
+      "2026112009": 0,
+      "2026112010": 0,
+      "2026112011": -2,
+      "2026112012": 1,
+      "2026112013": 1,
+      "2026112014": 0,
+      "2026112015": 0,
+      "2026112016": -1,
+      "2026112017": 3,
+      "2026112018": 1,
+      "2026112019": 1,
+      "2026112020": -1
+    },
+    "seeds_more_wins": 10,
+    "player_fall_change": -9,
+    "contact_timeout_change": 1,
+    "four_gates": {
+      "win_delta": false,
+      "contact_timeout": false,
+      "player_fall_delta": true,
+      "positive_seed_count": false
+    },
+    "complete_improvement": false
+  },
+  "selection_vs_final": {
+    "Epsilon020": {
+      "control": "Final",
+      "candidate": "Epsilon020",
+      "gained_wins": 18,
+      "lost_wins": 20,
+      "net_wins": -2,
+      "win_rate_difference_pp": -1.0,
+      "transitions": {
+        "W": {
+          "W": 131,
+          "D": 3,
+          "L": 17
+        },
+        "D": {
+          "W": 6,
+          "D": 3,
+          "L": 2
+        },
+        "L": {
+          "W": 12,
+          "D": 1,
+          "L": 25
+        }
+      },
+      "seed_win_deltas": {
+        "2026112001": -1,
+        "2026112002": -2,
+        "2026112003": 1,
+        "2026112004": -4,
+        "2026112005": 3,
+        "2026112006": -1,
+        "2026112007": 0,
+        "2026112008": -2,
+        "2026112009": 0,
+        "2026112010": 2,
+        "2026112011": 0,
+        "2026112012": 0,
+        "2026112013": 1,
+        "2026112014": -1,
+        "2026112015": 2,
+        "2026112016": 0,
+        "2026112017": -1,
+        "2026112018": 0,
+        "2026112019": 0,
+        "2026112020": 1
+      },
+      "seeds_more_wins": 6,
+      "player_fall_change": 6,
+      "contact_timeout_change": -4
+    },
+    "Epsilon015": {
+      "control": "Final",
+      "candidate": "Epsilon015",
+      "gained_wins": 20,
+      "lost_wins": 14,
+      "net_wins": 6,
+      "win_rate_difference_pp": 3.0,
+      "transitions": {
+        "W": {
+          "W": 137,
+          "D": 2,
+          "L": 12
+        },
+        "D": {
+          "W": 6,
+          "D": 3,
+          "L": 2
+        },
+        "L": {
+          "W": 14,
+          "D": 3,
+          "L": 21
+        }
+      },
+      "seed_win_deltas": {
+        "2026112001": 0,
+        "2026112002": 0,
+        "2026112003": -1,
+        "2026112004": -3,
+        "2026112005": 3,
+        "2026112006": 1,
+        "2026112007": -2,
+        "2026112008": 1,
+        "2026112009": 0,
+        "2026112010": 2,
+        "2026112011": -2,
+        "2026112012": 1,
+        "2026112013": 2,
+        "2026112014": -1,
+        "2026112015": 2,
+        "2026112016": -1,
+        "2026112017": 2,
+        "2026112018": 1,
+        "2026112019": 1,
+        "2026112020": 0
+      },
+      "seeds_more_wins": 10,
+      "player_fall_change": -3,
+      "contact_timeout_change": -3
+    }
+  },
+  "formal_openings": 200,
+  "formal_rounds": 600,
+  "target_wins_to_strictly_exceed_80_percent": 161,
+  "round_metrics_sha256": "5d33b3d55c2705890ed36533cd7b3de7ffc8ceac80c874d05cdbd8aacfa630de",
+  "model_bindings_sha256": "b376cfda70e58b69aa89ff5b1ffa71869d07843817c16bc4a99d29772d489c41",
+  "input_lock_sha256": "55a37b6cfeaf33b759a5e6d2736f75c1077be331209acfc5978d53f0c4558020",
+  "published_rounds_sha256": "8c1af2e32edfb865ddc4c1d2e19c68bc75db071673d4b04275472ac985dde1f1"
+}
