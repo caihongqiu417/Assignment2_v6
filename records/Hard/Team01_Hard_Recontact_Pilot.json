@@ -1,0 +1,2865 @@
+{
+  "state": "frozen_only",
+  "experiment": "Team01_Hard_E7_RecontactHeldout_v1",
+  "validation_results_sha256": "fec423557c1f21bf0112cfb51b3e4eee4dbd5fc3fad489022148eca9950a643e",
+  "validation_candidate_table_sha256": "275330c0026dd44f10058078dcddfd95b805a602f93b613538fa757253561a55",
+  "validator_sha256": "49e771692b1d6714fc612a7c3e8c09f2b2ea510f4cb0f0c2da58e768e2e3b6e2",
+  "strategy_plan_sha256": "e62cff7c23a9270c7d3aa2cb96d5270a8238132b0ef1e7ac635cf2f8d0cb5c7d",
+  "selection_protocol_sha256": "9c7032ac55c7d55b5da9dc7e2838f4b89f857e06721197f54bdc730a42b4b7cd",
+  "environment_fingerprint_sha256": "bd7309d199752d96ccc07e0d6ca915c9c2996d9f3045a45012af0e330403893c",
+  "source_models": {
+    "1": {
+      "model_id": "Lambda020Seed1",
+      "training_safety_feedback_lambda": 0.02,
+      "checkpoint_step": 200005,
+      "path": "results/Team01_Hard_E7_SafetyLambda_Lambda020_seed1/RollingControl/RollingControl-200005.onnx",
+      "sha256": "6bd535ffc4cce06e8446f357f51d42f309463a7a872b5d88a9c5422d2f60767e"
+    },
+    "2": {
+      "model_id": "Lambda020Seed2",
+      "training_safety_feedback_lambda": 0.02,
+      "checkpoint_step": 200018,
+      "path": "results/Team01_Hard_E7_SafetyLambda_Lambda020_seed2/RollingControl/RollingControl-200018.onnx",
+      "sha256": "cd8db3e9dd3cb4163462b16554668df76b8bdd80ccfb6dca0b7d43d4327ba4c9"
+    }
+  },
+  "required_technical_first": true,
+  "pilot": [
+    {
+      "case": "2026111413_R10",
+      "training_seed": 1,
+      "evaluation_seed": 2026111413,
+      "archive": "discovery",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_v1/round_metrics.json",
+      "index_sha256": "68993d2c5456615bac019265d281ef05efa5186e3776c2772848a134ab85ca98",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_v1/attempts/attempt_04/sessions/2026111413_R10_Lambda020/events.jsonl",
+      "events_sha256": "eb83841a24c35b19a49db25620297bbd8afa0cd9a4ade66f74fa461372e768d0",
+      "model_sha256": "6bd535ffc4cce06e8446f357f51d42f309463a7a872b5d88a9c5422d2f60767e",
+      "checkpoint_steps": 200005,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -0.564429759979248,
+            "y": 0.5,
+            "z": -1.1581876277923584
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 0.564429759979248,
+            "y": 0.5,
+            "z": 1.1581876277923584
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          0,
+          2
+        ],
+        "opponent": [
+          1,
+          1
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 0,
+          "actionZ": 2,
+          "observations": [
+            -0.141107439994812,
+            -0.2895469069480896,
+            0.141107439994812,
+            0.2895469069480896,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 1,
+          "observations": [
+            0.141107439994812,
+            0.2895469069480896,
+            -0.141107439994812,
+            -0.2895469069480896,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 460,
+        "step": 91,
+        "seconds": 1.8
+      },
+      "first_contact": {
+        "line": 115,
+        "step": 23,
+        "seconds": 0.44
+      },
+      "exits": {
+        "opponent": {
+          "line": 129,
+          "step": 25,
+          "seconds": 0.48
+        },
+        "player": {
+          "line": 130,
+          "step": 25,
+          "seconds": 0.48
+        }
+      },
+      "last_prior_impulse": {
+        "line": 114,
+        "step": 23,
+        "seconds": 0.44
+      },
+      "last_prior_impulse_settlement": {
+        "line": 126,
+        "step": 25,
+        "seconds": 0.48
+      },
+      "edge": {
+        "name": "-X",
+        "normal_xz": [
+          -1,
+          0
+        ]
+      },
+      "separation_m": 1.4043090894276744,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": -2.437390089035034,
+            "y": 0.5,
+            "z": -2.182204484939575
+          },
+          "velocity": {
+            "x": -0.629609227180481,
+            "y": 0.0,
+            "z": -2.9983129501342773
+          },
+          "angularVelocity": {
+            "x": -5.995972633361816,
+            "y": -0.8903596997261047,
+            "z": 1.2598562240600586
+          },
+          "rotation": {
+            "x": 0.19561567902565002,
+            "y": 0.9135597348213196,
+            "z": 0.356132447719574,
+            "w": -0.017687013372778893
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": -3.3020293712615967,
+            "y": 0.5,
+            "z": -3.2887680530548096
+          },
+          "velocity": {
+            "x": 1.3601856231689453,
+            "y": 0.0,
+            "z": -0.23070234060287476
+          },
+          "angularVelocity": {
+            "x": -0.46204429864883423,
+            "y": -0.8922984004020691,
+            "z": -2.7197253704071045
+          },
+          "rotation": {
+            "x": -0.09496317058801651,
+            "y": -0.1846192330121994,
+            "z": -0.2717471122741699,
+            "w": 0.9397081136703491
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 460,
+          "step": 91,
+          "seconds": 1.8,
+          "direction_xz": [
+            -1,
+            1
+          ],
+          "branch_codes": [
+            1,
+            2
+          ]
+        },
+        "opponent": {
+          "line": 459,
+          "step": 91,
+          "seconds": 1.8,
+          "direction_xz": [
+            1,
+            1
+          ],
+          "branch_codes": [
+            2,
+            2
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 6,
+        "cosine": 0.5468650179195634,
+        "predicted_normal_xz": [
+          -0.5468650179195634,
+          -0.8372207905778711
+        ],
+        "precontact_min_player_margin_m": 1.9256611902787881,
+        "ordinary_m_s": 1.2154054817576152,
+        "player_script_m_s": 0.0,
+        "combined_j_m_s": 1.2154054817576152,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          -1,
+          -1
+        ],
+        "branch_codes": [
+          1,
+          1
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 5,
+          "cosine": 0.6147396044564768,
+          "predicted_normal_xz": [
+            -0.6147396044564768,
+            -0.7887301304709327
+          ],
+          "precontact_min_player_margin_m": 1.2405793026860614,
+          "ordinary_m_s": 1.7650117893923016,
+          "player_script_m_s": 2.235508701435199,
+          "combined_j_m_s": 4.000520490827501,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 2.785115009069886,
+      "training_abs_error_p90": 0.9558227118031926,
+      "required_strict_j_delta_m_s": 1.9116454236063851,
+      "ranking_sha256": "02f73108c13831bdc49a134822063c5046589241fa5213f396c67bb51289dc18",
+      "pretrigger_raw_prefix_sha256": "5ba510cfc452ba40440dedc263356bfa66765caecac9733bdbc61e1396eb5c67",
+      "pretrigger_comparable_prefix_sha256": "2d54d64876e2eeb0f44e22b875879904c8d15b6e63b893c583f4dd6fbb2a2585",
+      "runtime_binding_sha256": "1949614cf964ee0b22919975d7a20a80590e82d7c9d8969382ce5647bfb71e60",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "cd27eec516b590d3655499bef41b2b4a42bc2e0d7f42e7b819e0467e99e4b468",
+      "pair": "P01",
+      "arms": [
+        "C",
+        "T"
+      ],
+      "candidate_override_physics_steps": [
+        91,
+        100
+      ],
+      "first_rejoined_model_decision": 101
+    },
+    {
+      "case": "2026111418_R10",
+      "training_seed": 1,
+      "evaluation_seed": 2026111418,
+      "archive": "discovery",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_v1/round_metrics.json",
+      "index_sha256": "68993d2c5456615bac019265d281ef05efa5186e3776c2772848a134ab85ca98",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_v1/attempts/attempt_05/sessions/2026111418_R10_Lambda020/events.jsonl",
+      "events_sha256": "b362055adaa493509f2aeab5de2429443be07b734a2950aa348ff054017ca651",
+      "model_sha256": "6bd535ffc4cce06e8446f357f51d42f309463a7a872b5d88a9c5422d2f60767e",
+      "checkpoint_steps": 200005,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -1.4308199882507324,
+            "y": 0.5,
+            "z": 1.1251256465911865
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 1.4308199882507324,
+            "y": 0.5,
+            "z": -1.1251256465911865
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          2,
+          1
+        ],
+        "opponent": [
+          1,
+          2
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 1,
+          "observations": [
+            -0.3577049970626831,
+            0.28128141164779663,
+            0.3577049970626831,
+            -0.28128141164779663,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 2,
+          "observations": [
+            0.3577049970626831,
+            -0.28128141164779663,
+            -0.3577049970626831,
+            0.28128141164779663,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 403,
+        "step": 81,
+        "seconds": 1.6
+      },
+      "first_contact": {
+        "line": 150,
+        "step": 30,
+        "seconds": 0.58
+      },
+      "exits": {
+        "opponent": {
+          "line": 165,
+          "step": 32,
+          "seconds": 0.62
+        },
+        "player": {
+          "line": 166,
+          "step": 32,
+          "seconds": 0.62
+        }
+      },
+      "last_prior_impulse": {
+        "line": 149,
+        "step": 30,
+        "seconds": 0.58
+      },
+      "last_prior_impulse_settlement": {
+        "line": 161,
+        "step": 32,
+        "seconds": 0.62
+      },
+      "edge": {
+        "name": "-X",
+        "normal_xz": [
+          -1,
+          0
+        ]
+      },
+      "separation_m": 1.430086754616386,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": -1.6845108270645142,
+            "y": 0.5,
+            "z": 2.5353877544403076
+          },
+          "velocity": {
+            "x": -4.934183597564697,
+            "y": 0.0,
+            "z": 0.36865195631980896
+          },
+          "angularVelocity": {
+            "x": 0.7366640567779541,
+            "y": 5.24202823638916,
+            "z": 9.867716789245605
+          },
+          "rotation": {
+            "x": 0.4635711908340454,
+            "y": -0.7495638728141785,
+            "z": -0.19726607203483582,
+            "w": -0.4293506145477295
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": -3.043555736541748,
+            "y": 0.5,
+            "z": 2.980522632598877
+          },
+          "velocity": {
+            "x": -0.7786059975624084,
+            "y": 0.0,
+            "z": 1.6527345180511475
+          },
+          "angularVelocity": {
+            "x": 3.3054633140563965,
+            "y": 4.575486660003662,
+            "z": 1.5578498840332031
+          },
+          "rotation": {
+            "x": -0.08466333150863647,
+            "y": 0.015303991734981537,
+            "z": 0.6718730926513672,
+            "w": 0.7356524467468262
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 403,
+          "step": 81,
+          "seconds": 1.6,
+          "direction_xz": [
+            1,
+            1
+          ],
+          "branch_codes": [
+            2,
+            2
+          ]
+        },
+        "opponent": {
+          "line": 402,
+          "step": 81,
+          "seconds": 1.6,
+          "direction_xz": [
+            1,
+            -1
+          ],
+          "branch_codes": [
+            2,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 6,
+        "cosine": 0.8736229421361463,
+        "predicted_normal_xz": [
+          -0.8736229421361463,
+          0.48660348845172025
+        ],
+        "precontact_min_player_margin_m": 1.3264771890443074,
+        "ordinary_m_s": 1.7171192338072727,
+        "player_script_m_s": 6.041746439744179,
+        "combined_j_m_s": 7.758865673551451,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          -1,
+          1
+        ],
+        "branch_codes": [
+          1,
+          2
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 5,
+          "cosine": 0.8692571748985161,
+          "predicted_normal_xz": [
+            -0.8692571748985161,
+            0.49436015604764383
+          ],
+          "precontact_min_player_margin_m": 0.25027041554216733,
+          "ordinary_m_s": 2.282371597255684,
+          "player_script_m_s": 8.363460046977778,
+          "combined_j_m_s": 10.645831644233462,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 2.886965970682011,
+      "training_abs_error_p90": 0.9558227118031926,
+      "required_strict_j_delta_m_s": 1.9116454236063851,
+      "ranking_sha256": "095943475d75ffa1d56d003e988ec734f38f36d51793dabc0e060aa3a2643eec",
+      "pretrigger_raw_prefix_sha256": "77abb07d4b68ed478f5210a17a7a8c774a647de261ac2bd83f44d31099b48b98",
+      "pretrigger_comparable_prefix_sha256": "b2f3170e41eb5714bbb9725a5193215736a714e81d635f573772ac6fa9d13acf",
+      "runtime_binding_sha256": "d552b98a77e12f125ef42f6a8c1725bf56e8dc68cae15200412ecb3d412358ad",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "7d957169bc52e791b7e91518cf3808490f38bda24d8b9bfc83d74c39537b0e17",
+      "pair": "P02",
+      "arms": [
+        "T",
+        "C"
+      ],
+      "candidate_override_physics_steps": [
+        81,
+        90
+      ],
+      "first_rejoined_model_decision": 91
+    },
+    {
+      "case": "2026111503_R04",
+      "training_seed": 1,
+      "evaluation_seed": 2026111503,
+      "archive": "holdout",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/round_metrics.json",
+      "index_sha256": "b16798a2d131926a8c61c690d32739d8aa8c81cf7e1533d341301e96d7082640",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/attempts/attempt_02/sessions/2026111503_R04_Lambda020Seed1/events.jsonl",
+      "events_sha256": "5f1d09c4384d93eb0312ca9e79ebec23970bd80a23cfa4814bc9d9fe6eb8f5cd",
+      "model_sha256": "6bd535ffc4cce06e8446f357f51d42f309463a7a872b5d88a9c5422d2f60767e",
+      "checkpoint_steps": 200005,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -3.5251643657684326,
+            "y": 0.5,
+            "z": -3.3552165031433105
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 3.5251643657684326,
+            "y": 0.5,
+            "z": 3.3552165031433105
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          2,
+          2
+        ],
+        "opponent": [
+          1,
+          1
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 2,
+          "observations": [
+            -0.8812910914421082,
+            -0.8388041257858276,
+            0.8812910914421082,
+            0.8388041257858276,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 1,
+          "observations": [
+            0.8812910914421082,
+            0.8388041257858276,
+            -0.8812910914421082,
+            -0.8388041257858276,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 560,
+        "step": 111,
+        "seconds": 2.2
+      },
+      "first_contact": {
+        "line": 245,
+        "step": 49,
+        "seconds": 0.96
+      },
+      "exits": {
+        "opponent": {
+          "line": 259,
+          "step": 51,
+          "seconds": 1.0
+        },
+        "player": {
+          "line": 260,
+          "step": 51,
+          "seconds": 1.0
+        }
+      },
+      "last_prior_impulse": {
+        "line": 244,
+        "step": 49,
+        "seconds": 0.96
+      },
+      "last_prior_impulse_settlement": {
+        "line": 256,
+        "step": 51,
+        "seconds": 1.0
+      },
+      "edge": {
+        "name": "-Z",
+        "normal_xz": [
+          0,
+          -1
+        ]
+      },
+      "separation_m": 1.2096807796916584,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": -2.2208125591278076,
+            "y": 0.5,
+            "z": -2.3291635513305664
+          },
+          "velocity": {
+            "x": -3.1933517456054688,
+            "y": 0.0,
+            "z": -0.23075896501541138
+          },
+          "angularVelocity": {
+            "x": -0.4608764946460724,
+            "y": -2.433338165283203,
+            "z": 6.38668966293335
+          },
+          "rotation": {
+            "x": -0.036905236542224884,
+            "y": -0.8863022923469543,
+            "z": -0.014697279781103134,
+            "w": 0.46140044927597046
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": -3.0525224208831787,
+            "y": 0.5,
+            "z": -3.2075634002685547
+          },
+          "velocity": {
+            "x": 0.9593823552131653,
+            "y": 0.0,
+            "z": -0.0975572019815445
+          },
+          "angularVelocity": {
+            "x": -0.2698960602283478,
+            "y": -2.0818865299224854,
+            "z": -1.8984367847442627
+          },
+          "rotation": {
+            "x": 0.6434333324432373,
+            "y": 0.19724008440971375,
+            "z": -0.3668968677520752,
+            "w": -0.6422434449195862
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 560,
+          "step": 111,
+          "seconds": 2.2,
+          "direction_xz": [
+            1,
+            -1
+          ],
+          "branch_codes": [
+            2,
+            1
+          ]
+        },
+        "opponent": {
+          "line": 559,
+          "step": 111,
+          "seconds": 2.2,
+          "direction_xz": [
+            1,
+            1
+          ],
+          "branch_codes": [
+            2,
+            2
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 4,
+        "cosine": 0.8513488418479993,
+        "predicted_normal_xz": [
+          -0.5245999899771924,
+          -0.8513488418479993
+        ],
+        "precontact_min_player_margin_m": 1.8007949143606572,
+        "ordinary_m_s": 1.4754047439078801,
+        "player_script_m_s": 1.9400817714911271,
+        "combined_j_m_s": 3.4154865153990075,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          -1,
+          -1
+        ],
+        "branch_codes": [
+          1,
+          1
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 3,
+          "cosine": 0.836251998396242,
+          "predicted_normal_xz": [
+            -0.5483453247528347,
+            -0.836251998396242
+          ],
+          "precontact_min_player_margin_m": 1.383420087590175,
+          "ordinary_m_s": 1.6404205517627197,
+          "player_script_m_s": 3.7707707494242,
+          "combined_j_m_s": 5.4111913011869195,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 1.995704785787912,
+      "training_abs_error_p90": 0.9398290048821527,
+      "required_strict_j_delta_m_s": 1.8796580097643054,
+      "ranking_sha256": "0c0ad0ea14a07410e1dde31f830114bf7a33e26a940a040163ea4698d005aaeb",
+      "pretrigger_raw_prefix_sha256": "f7da6f2879ac6514a330808b7ac2d02cecfb010b314821bf09688e5a4c71bf5e",
+      "pretrigger_comparable_prefix_sha256": "365bc9d69719884278fd405e065a256fba942ffd90654f628c9806a8fc3e0019",
+      "runtime_binding_sha256": "65473f285107150c909731ab482650f8013f4c6fd5892dd67d6e948b78a41f2d",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "6dd0f3eee4377da291a865ae719b9c6613b7c3cddf41e14046adcb636a4fd239",
+      "pair": "P03",
+      "arms": [
+        "C",
+        "T"
+      ],
+      "candidate_override_physics_steps": [
+        111,
+        120
+      ],
+      "first_rejoined_model_decision": 121
+    },
+    {
+      "case": "2026111404_R05",
+      "training_seed": 1,
+      "evaluation_seed": 2026111404,
+      "archive": "discovery",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_v1/round_metrics.json",
+      "index_sha256": "68993d2c5456615bac019265d281ef05efa5186e3776c2772848a134ab85ca98",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_v1/attempts/attempt_02/sessions/2026111404_R05_Lambda020/events.jsonl",
+      "events_sha256": "646bbbaea83450eb262743d515f18b5d9cc47b7fd5ed2fef7dddc4fcb6652054",
+      "model_sha256": "6bd535ffc4cce06e8446f357f51d42f309463a7a872b5d88a9c5422d2f60767e",
+      "checkpoint_steps": 200005,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -1.06862211227417,
+            "y": 0.5,
+            "z": 1.6691657304763794
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 1.06862211227417,
+            "y": 0.5,
+            "z": -1.6691657304763794
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          2,
+          1
+        ],
+        "opponent": [
+          1,
+          2
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 1,
+          "observations": [
+            -0.2671555280685425,
+            0.41729143261909485,
+            0.2671555280685425,
+            -0.41729143261909485,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 2,
+          "observations": [
+            0.2671555280685425,
+            -0.41729143261909485,
+            -0.2671555280685425,
+            0.41729143261909485,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 460,
+        "step": 91,
+        "seconds": 1.8
+      },
+      "first_contact": {
+        "line": 155,
+        "step": 31,
+        "seconds": 0.6
+      },
+      "exits": {
+        "opponent": {
+          "line": 169,
+          "step": 33,
+          "seconds": 0.64
+        },
+        "player": {
+          "line": 170,
+          "step": 33,
+          "seconds": 0.64
+        }
+      },
+      "last_prior_impulse": {
+        "line": 154,
+        "step": 31,
+        "seconds": 0.6
+      },
+      "last_prior_impulse_settlement": {
+        "line": 166,
+        "step": 33,
+        "seconds": 0.64
+      },
+      "edge": {
+        "name": "-X",
+        "normal_xz": [
+          -1,
+          0
+        ]
+      },
+      "separation_m": 1.6083693399047339,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": -1.8581501245498657,
+            "y": 0.5,
+            "z": 3.926342487335205
+          },
+          "velocity": {
+            "x": -5.6433892250061035,
+            "y": 0.0,
+            "z": -1.5921647548675537
+          },
+          "angularVelocity": {
+            "x": -3.1836771965026855,
+            "y": 5.1365885734558105,
+            "z": 11.286114692687988
+          },
+          "rotation": {
+            "x": 0.2515043318271637,
+            "y": 0.47748908400535583,
+            "z": -0.7889899015426636,
+            "w": -0.2936745584011078
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": -3.2748794555664062,
+            "y": 0.5,
+            "z": 3.164942502975464
+          },
+          "velocity": {
+            "x": 0.6495368480682373,
+            "y": 0.0,
+            "z": 0.18454891443252563
+          },
+          "angularVelocity": {
+            "x": 0.3698766529560089,
+            "y": 5.132407188415527,
+            "z": -1.2982687950134277
+          },
+          "rotation": {
+            "x": 0.8081359267234802,
+            "y": 0.31665337085723877,
+            "z": 0.3848598301410675,
+            "w": 0.3138948976993561
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 460,
+          "step": 91,
+          "seconds": 1.8,
+          "direction_xz": [
+            1,
+            0
+          ],
+          "branch_codes": [
+            2,
+            0
+          ]
+        },
+        "opponent": {
+          "line": 459,
+          "step": 91,
+          "seconds": 1.8,
+          "direction_xz": [
+            1,
+            -1
+          ],
+          "branch_codes": [
+            2,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 6,
+        "cosine": 0.7361846805896455,
+        "predicted_normal_xz": [
+          -0.7361846805896455,
+          -0.6767807001275388
+        ],
+        "precontact_min_player_margin_m": 0.6170040222419209,
+        "ordinary_m_s": 1.875989806634717,
+        "player_script_m_s": 4.9974127755641895,
+        "combined_j_m_s": 6.873402582198906,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          0,
+          -1
+        ],
+        "branch_codes": [
+          0,
+          1
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 5,
+          "cosine": 0.786984468082874,
+          "predicted_normal_xz": [
+            -0.786984468082874,
+            -0.6169728089602619
+          ],
+          "precontact_min_player_margin_m": 0.05266509974131006,
+          "ordinary_m_s": 2.6137718067249716,
+          "player_script_m_s": 7.2928744541863795,
+          "combined_j_m_s": 9.906646260911351,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 3.033243678712445,
+      "training_abs_error_p90": 0.9526699193939144,
+      "required_strict_j_delta_m_s": 1.9053398387878289,
+      "ranking_sha256": "1040637ac5ad086ef70afe812f32eebfba87c59e47715bc9173d5e0ee3ea4f4f",
+      "pretrigger_raw_prefix_sha256": "e81a3d08f25dbfa2f4c47cec973619f3f61645f332be01f0b59bfc623d5f3159",
+      "pretrigger_comparable_prefix_sha256": "3fbdfe7f06f7e409eadfd3b5cb37fb3ce8826ccdb4ef68647134683af2a676ac",
+      "runtime_binding_sha256": "4dfc4a8ab80062fb94878f4920f6aec634b5191b247efe8cc52085e02efec551",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "ae80d4a04165e85c116d7105fc4238a2973b81ddb22a073b613b4ee1dbfcaaec",
+      "pair": "P04",
+      "arms": [
+        "T",
+        "C"
+      ],
+      "candidate_override_physics_steps": [
+        91,
+        100
+      ],
+      "first_rejoined_model_decision": 101
+    },
+    {
+      "case": "2026111511_R02",
+      "training_seed": 2,
+      "evaluation_seed": 2026111511,
+      "archive": "holdout",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/round_metrics.json",
+      "index_sha256": "b16798a2d131926a8c61c690d32739d8aa8c81cf7e1533d341301e96d7082640",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/attempts/attempt_06/sessions/2026111511_R02_Lambda020Seed2/events.jsonl",
+      "events_sha256": "09fc67566cc5f90c5e9180988d3314e16e1eeb35b6a33a3c3206d5951ad47e6a",
+      "model_sha256": "cd8db3e9dd3cb4163462b16554668df76b8bdd80ccfb6dca0b7d43d4327ba4c9",
+      "checkpoint_steps": 200018,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -2.7881762981414795,
+            "y": 0.5,
+            "z": 2.005204439163208
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 2.7881762981414795,
+            "y": 0.5,
+            "z": -2.005204439163208
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          2,
+          1
+        ],
+        "opponent": [
+          1,
+          2
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 1,
+          "observations": [
+            -0.6970440745353699,
+            0.501301109790802,
+            0.6970440745353699,
+            -0.501301109790802,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 2,
+          "observations": [
+            0.6970440745353699,
+            -0.501301109790802,
+            -0.6970440745353699,
+            0.501301109790802,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 597,
+        "step": 121,
+        "seconds": 2.4
+      },
+      "first_contact": {
+        "line": 209,
+        "step": 42,
+        "seconds": 0.82
+      },
+      "exits": {
+        "player": {
+          "line": 224,
+          "step": 44,
+          "seconds": 0.86
+        },
+        "opponent": {
+          "line": 225,
+          "step": 44,
+          "seconds": 0.86
+        }
+      },
+      "last_prior_impulse": {
+        "line": 210,
+        "step": 42,
+        "seconds": 0.82
+      },
+      "last_prior_impulse_settlement": {
+        "line": 221,
+        "step": 44,
+        "seconds": 0.86
+      },
+      "edge": {
+        "name": "+X",
+        "normal_xz": [
+          1,
+          0
+        ]
+      },
+      "separation_m": 1.3965687252647145,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": 1.9674307107925415,
+            "y": 0.5000000596046448,
+            "z": 3.3463006019592285
+          },
+          "velocity": {
+            "x": 3.3338735103607178,
+            "y": 0.0,
+            "z": -3.127892017364502
+          },
+          "angularVelocity": {
+            "x": -6.255132675170898,
+            "y": 0.598019003868103,
+            "z": -6.668376922607422
+          },
+          "rotation": {
+            "x": 0.6475862264633179,
+            "y": -0.025671355426311493,
+            "z": -0.737676739692688,
+            "w": -0.18922509253025055
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 3.1827359199523926,
+            "y": 0.5,
+            "z": 2.6582326889038086
+          },
+          "velocity": {
+            "x": -0.5818116068840027,
+            "y": 0.0,
+            "z": -3.1156108379364014
+          },
+          "angularVelocity": {
+            "x": -6.230570316314697,
+            "y": 0.9750866889953613,
+            "z": 1.1629807949066162
+          },
+          "rotation": {
+            "x": 0.6097353100776672,
+            "y": -0.613555908203125,
+            "z": 0.1723388433456421,
+            "w": 0.4712443947792053
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 597,
+          "step": 121,
+          "seconds": 2.4,
+          "direction_xz": [
+            -1,
+            -1
+          ],
+          "branch_codes": [
+            1,
+            1
+          ]
+        },
+        "opponent": {
+          "line": 596,
+          "step": 121,
+          "seconds": 2.4,
+          "direction_xz": [
+            -1,
+            -1
+          ],
+          "branch_codes": [
+            1,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 7,
+        "cosine": 0.6969849217061571,
+        "predicted_normal_xz": [
+          0.6969849217061571,
+          -0.717085782116939
+        ],
+        "precontact_min_player_margin_m": 1.4036993980407715,
+        "ordinary_m_s": 0.9427154528999979,
+        "player_script_m_s": 0.0,
+        "combined_j_m_s": 0.9427154528999979,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          1,
+          -1
+        ],
+        "branch_codes": [
+          2,
+          1
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 6,
+          "cosine": 0.6734072820389552,
+          "predicted_normal_xz": [
+            0.6734072820389552,
+            -0.739271690582635
+          ],
+          "precontact_min_player_margin_m": 1.067888882772539,
+          "ordinary_m_s": 1.328239172930966,
+          "player_script_m_s": 2.098137519090249,
+          "combined_j_m_s": 3.426376692021215,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 2.4836612391212167,
+      "training_abs_error_p90": 0.9155930618725868,
+      "required_strict_j_delta_m_s": 1.8311861237451736,
+      "ranking_sha256": "2056a395f16cd940dabf91736db527f5cba60b64f966bc5f97054fae667c6182",
+      "pretrigger_raw_prefix_sha256": "1b9c796ddac2443492de429855781a78ce1ea9f9fdc7523330f93689bfdb9208",
+      "pretrigger_comparable_prefix_sha256": "2e08209337bc2a952f1b7e106e2ee9192297865c959689b973775eeea6a0ce69",
+      "runtime_binding_sha256": "2e6f8a3c2a2f42e08534045eece035e3775b2c312f3f3d25c29cf9260d363905",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "73818add4eda30f6d4153ea6854b1d338e2588b4c34a6af086851a573612b9f0",
+      "pair": "P05",
+      "arms": [
+        "C",
+        "T"
+      ],
+      "candidate_override_physics_steps": [
+        121,
+        130
+      ],
+      "first_rejoined_model_decision": 131
+    },
+    {
+      "case": "2026111507_R03",
+      "training_seed": 2,
+      "evaluation_seed": 2026111507,
+      "archive": "holdout",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/round_metrics.json",
+      "index_sha256": "b16798a2d131926a8c61c690d32739d8aa8c81cf7e1533d341301e96d7082640",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/attempts/attempt_04/sessions/2026111507_R03_Lambda020Seed2/events.jsonl",
+      "events_sha256": "7a29ee48a9c0abc8a11b134991c1a193b721a3a3f5644f476eb37f1f5c91c914",
+      "model_sha256": "cd8db3e9dd3cb4163462b16554668df76b8bdd80ccfb6dca0b7d43d4327ba4c9",
+      "checkpoint_steps": 200018,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -3.0447168350219727,
+            "y": 0.5,
+            "z": -1.006906509399414
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 3.0447168350219727,
+            "y": 0.5,
+            "z": 1.006906509399414
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          2,
+          2
+        ],
+        "opponent": [
+          1,
+          1
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 2,
+          "observations": [
+            -0.7611792087554932,
+            -0.2517266273498535,
+            0.7611792087554932,
+            0.2517266273498535,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 1,
+          "observations": [
+            0.7611792087554932,
+            0.2517266273498535,
+            -0.7611792087554932,
+            -0.2517266273498535,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 972,
+        "step": 191,
+        "seconds": 3.8
+      },
+      "first_contact": {
+        "line": 639,
+        "step": 128,
+        "seconds": 2.54
+      },
+      "exits": {
+        "opponent": {
+          "line": 727,
+          "step": 142,
+          "seconds": 2.82
+        },
+        "player": {
+          "line": 728,
+          "step": 142,
+          "seconds": 2.82
+        }
+      },
+      "last_prior_impulse": null,
+      "last_prior_impulse_settlement": null,
+      "edge": {
+        "name": "+Z",
+        "normal_xz": [
+          0,
+          1
+        ]
+      },
+      "separation_m": 1.1499358115657543,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": 1.3740140199661255,
+            "y": 0.5,
+            "z": 2.761551856994629
+          },
+          "velocity": {
+            "x": 3.8171980381011963,
+            "y": 0.0,
+            "z": 1.9275500774383545
+          },
+          "angularVelocity": {
+            "x": 3.8557329177856445,
+            "y": 3.5672667026519775,
+            "z": -7.6350226402282715
+          },
+          "rotation": {
+            "x": 0.1763952076435089,
+            "y": -0.5794346332550049,
+            "z": 0.7420176863670349,
+            "w": 0.28731533885002136
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 2.3076295852661133,
+            "y": 0.5,
+            "z": 3.4329044818878174
+          },
+          "velocity": {
+            "x": 2.6666617393493652,
+            "y": 0.0,
+            "z": -1.3022360801696777
+          },
+          "angularVelocity": {
+            "x": -2.6038265228271484,
+            "y": 3.0422043800354004,
+            "z": -5.333953857421875
+          },
+          "rotation": {
+            "x": -0.19197392463684082,
+            "y": 0.3784686028957367,
+            "z": -0.5499221682548523,
+            "w": -0.7193700075149536
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 972,
+          "step": 191,
+          "seconds": 3.8,
+          "direction_xz": [
+            -1,
+            -1
+          ],
+          "branch_codes": [
+            1,
+            1
+          ]
+        },
+        "opponent": {
+          "line": 971,
+          "step": 191,
+          "seconds": 3.8,
+          "direction_xz": [
+            0,
+            -1
+          ],
+          "branch_codes": [
+            0,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 4,
+        "cosine": 0.4287613954912101,
+        "predicted_normal_xz": [
+          0.9034177692166732,
+          0.4287613954912101
+        ],
+        "precontact_min_player_margin_m": 1.723058907217328,
+        "ordinary_m_s": 0.3767905964887195,
+        "player_script_m_s": 0.0,
+        "combined_j_m_s": 0.3767905964887195,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          1,
+          1
+        ],
+        "branch_codes": [
+          2,
+          2
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 3,
+          "cosine": 0.46350011781692235,
+          "predicted_normal_xz": [
+            0.8860968574505268,
+            0.46350011781692235
+          ],
+          "precontact_min_player_margin_m": 1.4591302418532264,
+          "ordinary_m_s": 0.8134236487802441,
+          "player_script_m_s": 1.5541978690954141,
+          "combined_j_m_s": 2.367621517875658,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 1.9908309213869386,
+      "training_abs_error_p90": 0.9291317758650859,
+      "required_strict_j_delta_m_s": 1.8582635517301718,
+      "ranking_sha256": "2c3f9f0c969e7a3a1febaa593849068e21a5eb595739cdc93fd731350ad72a1d",
+      "pretrigger_raw_prefix_sha256": "8289cbf413ad515fb21c338061fc82ea658e54242a6c1919927d3b28dccae149",
+      "pretrigger_comparable_prefix_sha256": "8b87feeda5a9ce39c37a49096b6fcd97ebdc715a80d2c364d75fb26085d7dd5f",
+      "runtime_binding_sha256": "8694e3038db72e83968fc48d5ba89aad35b4363d70b0089a1cd7c442cf2efb0b",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "df7773c3b5454d8ca480ae6ac78a4ba3d5c8f19d636069592b01ed3a7fdb876f",
+      "pair": "P06",
+      "arms": [
+        "T",
+        "C"
+      ],
+      "candidate_override_physics_steps": [
+        191,
+        200
+      ],
+      "first_rejoined_model_decision": 201
+    },
+    {
+      "case": "2026111408_R08",
+      "training_seed": 2,
+      "evaluation_seed": 2026111408,
+      "archive": "discovery",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_seed2_v1/round_metrics.json",
+      "index_sha256": "f31969556a64205da1b356fb808c6db9f006ffba9a780c5abd7c174262e1cc5d",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_seed2_v1/attempts/attempt_03/sessions/2026111408_R08_Lambda020/events.jsonl",
+      "events_sha256": "d0245d79e23122bcb0a4f17c9ca692697d4f57d74132e147bdc5921355d80c63",
+      "model_sha256": "cd8db3e9dd3cb4163462b16554668df76b8bdd80ccfb6dca0b7d43d4327ba4c9",
+      "checkpoint_steps": 200018,
+      "initial": {
+        "player": {
+          "position": {
+            "x": 3.610543727874756,
+            "y": 0.5,
+            "z": 3.4206278324127197
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": -3.610543727874756,
+            "y": 0.5,
+            "z": -3.4206278324127197
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          1,
+          1
+        ],
+        "opponent": [
+          2,
+          2
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 1,
+          "observations": [
+            0.902635931968689,
+            0.8551569581031799,
+            -0.902635931968689,
+            -0.8551569581031799,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 2,
+          "observations": [
+            -0.902635931968689,
+            -0.8551569581031799,
+            0.902635931968689,
+            0.8551569581031799,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 600,
+        "step": 121,
+        "seconds": 2.4
+      },
+      "first_contact": {
+        "line": 249,
+        "step": 50,
+        "seconds": 0.98
+      },
+      "exits": {
+        "player": {
+          "line": 264,
+          "step": 52,
+          "seconds": 1.02
+        },
+        "opponent": {
+          "line": 265,
+          "step": 52,
+          "seconds": 1.02
+        }
+      },
+      "last_prior_impulse": {
+        "line": 250,
+        "step": 50,
+        "seconds": 0.98
+      },
+      "last_prior_impulse_settlement": {
+        "line": 261,
+        "step": 52,
+        "seconds": 1.02
+      },
+      "edge": {
+        "name": "+Z",
+        "normal_xz": [
+          0,
+          1
+        ]
+      },
+      "separation_m": 1.8040109981130723,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": 0.900395929813385,
+            "y": 0.5000000596046448,
+            "z": 3.15559983253479
+          },
+          "velocity": {
+            "x": 5.4095778465271,
+            "y": 0.0,
+            "z": -2.857329845428467
+          },
+          "angularVelocity": {
+            "x": -5.714009761810303,
+            "y": -7.997076034545898,
+            "z": -10.818498611450195
+          },
+          "rotation": {
+            "x": 0.9852146506309509,
+            "y": -0.0668148547410965,
+            "z": -0.05857997387647629,
+            "w": -0.14647984504699707
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 2.7043769359588623,
+            "y": 0.5,
+            "z": 3.1660022735595703
+          },
+          "velocity": {
+            "x": -2.731205463409424,
+            "y": 0.0,
+            "z": 0.51082444190979
+          },
+          "angularVelocity": {
+            "x": 1.0216466188430786,
+            "y": -8.141119956970215,
+            "z": 5.461758613586426
+          },
+          "rotation": {
+            "x": 0.09627300500869751,
+            "y": -0.5872063636779785,
+            "z": -0.7239760160446167,
+            "w": 0.34896841645240784
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 600,
+          "step": 121,
+          "seconds": 2.4,
+          "direction_xz": [
+            -1,
+            1
+          ],
+          "branch_codes": [
+            1,
+            2
+          ]
+        },
+        "opponent": {
+          "line": 599,
+          "step": 121,
+          "seconds": 2.4,
+          "direction_xz": [
+            -1,
+            -1
+          ],
+          "branch_codes": [
+            1,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 6,
+        "cosine": 0.3355208288402203,
+        "predicted_normal_xz": [
+          0.9420327878658851,
+          0.3355208288402203
+        ],
+        "precontact_min_player_margin_m": 1.59440016746521,
+        "ordinary_m_s": 1.1950115262543206,
+        "player_script_m_s": 0.9176118234717702,
+        "combined_j_m_s": 2.112623349726091,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          1,
+          -1
+        ],
+        "branch_codes": [
+          2,
+          1
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 5,
+          "cosine": 0.35848714763382405,
+          "predicted_normal_xz": [
+            0.9335346619067579,
+            0.35848714763382405
+          ],
+          "precontact_min_player_margin_m": 0.587095934715975,
+          "ordinary_m_s": 1.4154322282416707,
+          "player_script_m_s": 2.6082122890754222,
+          "combined_j_m_s": 4.023644517317093,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 1.9110211675910023,
+      "training_abs_error_p90": 0.9291317758650859,
+      "required_strict_j_delta_m_s": 1.8582635517301718,
+      "ranking_sha256": "2f28e4a75e0c6ae45ee29d179c0987300bbe26fc51e5af44fcfaacfae705c057",
+      "pretrigger_raw_prefix_sha256": "bd861fa9106af8a8fb1e51c3815fead9632a5007a8b64e510d5e66974563e548",
+      "pretrigger_comparable_prefix_sha256": "e4af34caf5c3be5cecd6d702b5cc961a58520f1893341f6bf4c8dd1399b10f3f",
+      "runtime_binding_sha256": "294fd0d636bf127f2cf15447e871c8577eb122b4afaecc7ec35f6ccf159e7f89",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "cc45da55df2d1a19b6e44561661cef6b4cc627d3c9dd0f79f0998b2dc929109a",
+      "pair": "P07",
+      "arms": [
+        "C",
+        "T"
+      ],
+      "candidate_override_physics_steps": [
+        121,
+        130
+      ],
+      "first_rejoined_model_decision": 131
+    },
+    {
+      "case": "2026111501_R08",
+      "training_seed": 2,
+      "evaluation_seed": 2026111501,
+      "archive": "holdout",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/round_metrics.json",
+      "index_sha256": "b16798a2d131926a8c61c690d32739d8aa8c81cf7e1533d341301e96d7082640",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/attempts/attempt_02/sessions/2026111501_R08_Lambda020Seed2/events.jsonl",
+      "events_sha256": "f95e78b2a5f4f1afd47c247e4bfa05bcc05b60ae71646ffe46022b8669647d28",
+      "model_sha256": "cd8db3e9dd3cb4163462b16554668df76b8bdd80ccfb6dca0b7d43d4327ba4c9",
+      "checkpoint_steps": 200018,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -2.977957010269165,
+            "y": 0.5,
+            "z": 1.6518912315368652
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 2.977957010269165,
+            "y": 0.5,
+            "z": -1.6518912315368652
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          2,
+          1
+        ],
+        "opponent": [
+          1,
+          2
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 1,
+          "observations": [
+            -0.7444892525672913,
+            0.4129728078842163,
+            0.7444892525672913,
+            -0.4129728078842163,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 2,
+          "observations": [
+            0.7444892525672913,
+            -0.4129728078842163,
+            -0.7444892525672913,
+            0.4129728078842163,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 1059,
+        "step": 211,
+        "seconds": 4.2
+      },
+      "first_contact": {
+        "line": 215,
+        "step": 43,
+        "seconds": 0.84
+      },
+      "exits": {
+        "opponent": {
+          "line": 229,
+          "step": 45,
+          "seconds": 0.88
+        },
+        "player": {
+          "line": 230,
+          "step": 45,
+          "seconds": 0.88
+        }
+      },
+      "last_prior_impulse": {
+        "line": 214,
+        "step": 43,
+        "seconds": 0.84
+      },
+      "last_prior_impulse_settlement": {
+        "line": 226,
+        "step": 45,
+        "seconds": 0.88
+      },
+      "edge": {
+        "name": "+X",
+        "normal_xz": [
+          1,
+          0
+        ]
+      },
+      "separation_m": 1.1583188063067007,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": 2.468165636062622,
+            "y": 0.5,
+            "z": 1.9357719421386719
+          },
+          "velocity": {
+            "x": 4.60498046875,
+            "y": 0.0,
+            "z": -2.3726775646209717
+          },
+          "angularVelocity": {
+            "x": -4.744707107543945,
+            "y": -5.976304531097412,
+            "z": -9.209946632385254
+          },
+          "rotation": {
+            "x": 0.11040614545345306,
+            "y": -0.3950144946575165,
+            "z": 0.8631654977798462,
+            "w": 0.29448166489601135
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 3.6262056827545166,
+            "y": 0.5000000596046448,
+            "z": 1.9103611707687378
+          },
+          "velocity": {
+            "x": -0.025820311158895493,
+            "y": 0.0,
+            "z": -4.185929775238037
+          },
+          "angularVelocity": {
+            "x": -8.37120532989502,
+            "y": -5.059828758239746,
+            "z": 0.050999999046325684
+          },
+          "rotation": {
+            "x": -0.039201121777296066,
+            "y": -0.4338662922382355,
+            "z": -0.07698415219783783,
+            "w": 0.8968259692192078
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 1059,
+          "step": 211,
+          "seconds": 4.2,
+          "direction_xz": [
+            -1,
+            1
+          ],
+          "branch_codes": [
+            1,
+            2
+          ]
+        },
+        "opponent": {
+          "line": 1058,
+          "step": 211,
+          "seconds": 4.2,
+          "direction_xz": [
+            -1,
+            -1
+          ],
+          "branch_codes": [
+            1,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 2,
+        "cosine": 0.9930750921843232,
+        "predicted_normal_xz": [
+          0.9930750921843232,
+          -0.11748132312456315
+        ],
+        "precontact_min_player_margin_m": 0.7671311412538802,
+        "ordinary_m_s": 2.1021370000956683,
+        "player_script_m_s": 0.0,
+        "combined_j_m_s": 2.1021370000956683,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          1,
+          -1
+        ],
+        "branch_codes": [
+          2,
+          1
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 2,
+          "cosine": 0.9947894734489218,
+          "predicted_normal_xz": [
+            0.9947894734489218,
+            -0.10195049541427899
+          ],
+          "precontact_min_player_margin_m": 0.3805712036627713,
+          "ordinary_m_s": 2.5920198511982475,
+          "player_script_m_s": 2.156740878332175,
+          "combined_j_m_s": 4.748760729530423,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 2.6466237294347543,
+      "training_abs_error_p90": 0.9266399569307184,
+      "required_strict_j_delta_m_s": 1.8532799138614369,
+      "ranking_sha256": "3a4c1aa8bb476e0b85ee7eb600c6d67fd3e41215a20c3a4fbde94364e826ce73",
+      "pretrigger_raw_prefix_sha256": "294e2ce7b9f51019f5d13a92d84bc918ecb81cd275c368b513722cd78a458682",
+      "pretrigger_comparable_prefix_sha256": "e65ddae07a234ea7b1687006cba84c6bab7fafd54d2422c361d2401bf327cc8b",
+      "runtime_binding_sha256": "148ba811c4f072e5da7814464be6ac0efe8b2a4b806d741a597a3798af558dc5",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "69ad3ceccb336cfd63a82e2d0a0824227b64570a886f97391b3ca688abc69fee",
+      "pair": "P08",
+      "arms": [
+        "T",
+        "C"
+      ],
+      "candidate_override_physics_steps": [
+        211,
+        220
+      ],
+      "first_rejoined_model_decision": 221
+    }
+  ],
+  "technical": [
+    {
+      "case": "2026111506_R04",
+      "training_seed": 1,
+      "evaluation_seed": 2026111506,
+      "archive": "holdout",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/round_metrics.json",
+      "index_sha256": "b16798a2d131926a8c61c690d32739d8aa8c81cf7e1533d341301e96d7082640",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_Lower_v1/attempts/attempt_04/sessions/2026111506_R04_Lambda020Seed1/events.jsonl",
+      "events_sha256": "57febbc43d1dfe83e3116aada7274304e24b985954ad3d2b5c43eb304da77227",
+      "model_sha256": "6bd535ffc4cce06e8446f357f51d42f309463a7a872b5d88a9c5422d2f60767e",
+      "checkpoint_steps": 200005,
+      "initial": {
+        "player": {
+          "position": {
+            "x": 0.3138338327407837,
+            "y": 0.5,
+            "z": 1.328531265258789
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": -0.3138338327407837,
+            "y": 0.5,
+            "z": -1.328531265258789
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          0,
+          1
+        ],
+        "opponent": [
+          2,
+          2
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 0,
+          "actionZ": 1,
+          "observations": [
+            0.07845845818519592,
+            0.33213281631469727,
+            -0.07845845818519592,
+            -0.33213281631469727,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 2,
+          "observations": [
+            -0.07845845818519592,
+            -0.33213281631469727,
+            0.07845845818519592,
+            0.33213281631469727,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 310,
+        "step": 61,
+        "seconds": 1.2
+      },
+      "first_contact": {
+        "line": 130,
+        "step": 26,
+        "seconds": 0.5
+      },
+      "exits": {
+        "opponent": {
+          "line": 144,
+          "step": 28,
+          "seconds": 0.54
+        },
+        "player": {
+          "line": 145,
+          "step": 28,
+          "seconds": 0.54
+        }
+      },
+      "last_prior_impulse": {
+        "line": 129,
+        "step": 26,
+        "seconds": 0.5
+      },
+      "last_prior_impulse_settlement": {
+        "line": 141,
+        "step": 28,
+        "seconds": 0.54
+      },
+      "edge": {
+        "name": "+X",
+        "normal_xz": [
+          1,
+          0
+        ]
+      },
+      "separation_m": 1.3165421672078377,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": 1.752129077911377,
+            "y": 0.5,
+            "z": 2.7376019954681396
+          },
+          "velocity": {
+            "x": 4.336486339569092,
+            "y": 0.0,
+            "z": 2.793008804321289
+          },
+          "angularVelocity": {
+            "x": 5.5853681564331055,
+            "y": -3.3911375999450684,
+            "z": -8.672317504882812
+          },
+          "rotation": {
+            "x": 0.38384073972702026,
+            "y": 0.320453405380249,
+            "z": -0.8227850794792175,
+            "w": -0.27018627524375916
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 2.9748880863189697,
+            "y": 0.5,
+            "z": 2.2496023178100586
+          },
+          "velocity": {
+            "x": 1.380432367324829,
+            "y": 0.0,
+            "z": 3.8572957515716553
+          },
+          "angularVelocity": {
+            "x": 7.7152180671691895,
+            "y": -2.887411117553711,
+            "z": -2.761500358581543
+          },
+          "rotation": {
+            "x": -0.9247614741325378,
+            "y": 0.0456346720457077,
+            "z": 0.17514856159687042,
+            "w": 0.33474865555763245
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 310,
+          "step": 61,
+          "seconds": 1.2,
+          "direction_xz": [
+            -1,
+            -1
+          ],
+          "branch_codes": [
+            1,
+            1
+          ]
+        },
+        "opponent": {
+          "line": 309,
+          "step": 61,
+          "seconds": 1.2,
+          "direction_xz": [
+            -1,
+            -1
+          ],
+          "branch_codes": [
+            1,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 6,
+        "cosine": 0.9236030208813621,
+        "predicted_normal_xz": [
+          0.9236030208813621,
+          -0.38335030953270693
+        ],
+        "precontact_min_player_margin_m": 1.4551909916021293,
+        "ordinary_m_s": 1.4318416878377789,
+        "player_script_m_s": 0.0,
+        "combined_j_m_s": 1.4318416878377789,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          1,
+          1
+        ],
+        "branch_codes": [
+          2,
+          2
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 5,
+          "cosine": 0.8742371092672884,
+          "predicted_normal_xz": [
+            0.8742371092672884,
+            -0.48549920368624205
+          ],
+          "precontact_min_player_margin_m": 0.6992009781316626,
+          "ordinary_m_s": 1.627043321576795,
+          "player_script_m_s": 5.13399346569131,
+          "combined_j_m_s": 6.761036787268105,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 5.329195099430326,
+      "training_abs_error_p90": 0.9558227118031926,
+      "required_strict_j_delta_m_s": 1.9116454236063851,
+      "ranking_sha256": "144babdc80ec1540b98e00d4754e4eff07e1ef7529afd91f228de6199f4ae396",
+      "pretrigger_raw_prefix_sha256": "7db6eb9edcb0b03ef25d4ca527a8bcf009bf6613660524525876f149d176ea72",
+      "pretrigger_comparable_prefix_sha256": "dcc2c5e7d610e2fe564eff927fc9cd80b7da202a47ba3fa99674a1227ad16d8f",
+      "runtime_binding_sha256": "f6e424a6bf7e22d7bd05c0a859ead774da6e1ed07cb3b74fba891432fa2f4a33",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "1f93ea8f0b3fa7b1c2759ecda1a0a8ccc026c3155d28bdbc21733689ddbebb40",
+      "arms": [
+        "A",
+        "A"
+      ],
+      "override": false,
+      "pair": "Tech01"
+    },
+    {
+      "case": "2026111402_R02",
+      "training_seed": 2,
+      "evaluation_seed": 2026111402,
+      "archive": "discovery",
+      "index": "evidence/evaluations/Hard_E7_SafetyLambda_seed2_v1/round_metrics.json",
+      "index_sha256": "f31969556a64205da1b356fb808c6db9f006ffba9a780c5abd7c174262e1cc5d",
+      "events": "evidence/evaluations/Hard_E7_SafetyLambda_seed2_v1/attempts/attempt_02/sessions/2026111402_R02_Lambda020/events.jsonl",
+      "events_sha256": "7a668708a01245501e4393c47ca52f7ae0936062b4136113630e77cbe31d03bf",
+      "model_sha256": "cd8db3e9dd3cb4163462b16554668df76b8bdd80ccfb6dca0b7d43d4327ba4c9",
+      "checkpoint_steps": 200018,
+      "initial": {
+        "player": {
+          "position": {
+            "x": -2.213226795196533,
+            "y": 0.5,
+            "z": 0.45577114820480347
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": 2.213226795196533,
+            "y": 0.5,
+            "z": -0.45577114820480347
+          },
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "angularVelocity": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        }
+      },
+      "first_decisions": {
+        "player": [
+          2,
+          0
+        ],
+        "opponent": [
+          1,
+          2
+        ]
+      },
+      "first_observations": {
+        "player": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 2,
+          "actionZ": 0,
+          "observations": [
+            -0.5533066987991333,
+            0.11394278705120087,
+            0.5533066987991333,
+            -0.11394278705120087,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "opponent": {
+          "physicsStep": 1,
+          "academyStep": 1,
+          "actionX": 1,
+          "actionZ": 2,
+          "observations": [
+            0.5533066987991333,
+            -0.11394278705120087,
+            -0.5533066987991333,
+            0.11394278705120087,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trigger": {
+        "line": 558,
+        "step": 111,
+        "seconds": 2.2
+      },
+      "first_contact": {
+        "line": 180,
+        "step": 36,
+        "seconds": 0.7
+      },
+      "exits": {
+        "opponent": {
+          "line": 194,
+          "step": 38,
+          "seconds": 0.74
+        },
+        "player": {
+          "line": 195,
+          "step": 38,
+          "seconds": 0.74
+        }
+      },
+      "last_prior_impulse": {
+        "line": 179,
+        "step": 36,
+        "seconds": 0.7
+      },
+      "last_prior_impulse_settlement": {
+        "line": 191,
+        "step": 38,
+        "seconds": 0.74
+      },
+      "edge": {
+        "name": "-X",
+        "normal_xz": [
+          -1,
+          0
+        ]
+      },
+      "separation_m": 1.9287823759988645,
+      "bodies": {
+        "player": {
+          "position": {
+            "x": -1.2632266283035278,
+            "y": 0.5000000596046448,
+            "z": 1.83578622341156
+          },
+          "velocity": {
+            "x": -4.55224609375,
+            "y": 0.0,
+            "z": 0.16581463813781738
+          },
+          "angularVelocity": {
+            "x": 0.33098796010017395,
+            "y": -4.644576549530029,
+            "z": 9.103837013244629
+          },
+          "rotation": {
+            "x": -0.23748779296875,
+            "y": -0.4743303060531616,
+            "z": -0.8190811276435852,
+            "w": -0.21844080090522766
+          }
+        },
+        "opponent": {
+          "position": {
+            "x": -3.007412910461426,
+            "y": 0.5,
+            "z": 2.659203290939331
+          },
+          "velocity": {
+            "x": 1.8032276630401611,
+            "y": 0.0,
+            "z": -2.68131160736084
+          },
+          "angularVelocity": {
+            "x": -5.361974239349365,
+            "y": -3.506524085998535,
+            "z": -3.605809211730957
+          },
+          "rotation": {
+            "x": -0.014291442930698395,
+            "y": -0.12245526909828186,
+            "z": 0.9863665103912354,
+            "w": 0.1090027242898941
+          }
+        }
+      },
+      "actions": {
+        "player": {
+          "line": 558,
+          "step": 111,
+          "seconds": 2.2,
+          "direction_xz": [
+            1,
+            -1
+          ],
+          "branch_codes": [
+            2,
+            1
+          ]
+        },
+        "opponent": {
+          "line": 557,
+          "step": 111,
+          "seconds": 2.2,
+          "direction_xz": [
+            1,
+            -1
+          ],
+          "branch_codes": [
+            2,
+            1
+          ]
+        }
+      },
+      "original_prediction": {
+        "status": "readable_contact_predicted",
+        "contact_offset": 7,
+        "cosine": 0.8954270729716127,
+        "predicted_normal_xz": [
+          -0.8954270729716127,
+          0.4452082175673425
+        ],
+        "precontact_min_player_margin_m": 2.00656305040632,
+        "ordinary_m_s": 3.077997493949343,
+        "player_script_m_s": 0.0,
+        "combined_j_m_s": 3.077997493949343,
+        "opponent_script_to_player_magnitude_m_s": 0.0
+      },
+      "candidate": {
+        "direction_xz": [
+          -1,
+          1
+        ],
+        "branch_codes": [
+          1,
+          2
+        ],
+        "prediction": {
+          "status": "readable_contact_predicted",
+          "contact_offset": 6,
+          "cosine": 0.922012838883841,
+          "predicted_normal_xz": [
+            -0.922012838883841,
+            0.38715930175234115
+          ],
+          "precontact_min_player_margin_m": 0.7903974960149185,
+          "ordinary_m_s": 4.36365558201356,
+          "player_script_m_s": 1.9883667085883414,
+          "combined_j_m_s": 6.3520222906019015,
+          "opponent_script_to_player_magnitude_m_s": 0.0
+        }
+      },
+      "estimated_j_delta_m_s": 3.2740247966525584,
+      "training_abs_error_p90": 0.9328695042666372,
+      "required_strict_j_delta_m_s": 1.8657390085332743,
+      "ranking_sha256": "5f8f22c4a85f72d58d4bee4a79f64d3bd6b6de189a49f9bdc3366fbc7dba18d4",
+      "pretrigger_raw_prefix_sha256": "70c6dba779a44de054ff3807df5f65232c5249163644b90661891e13e3b9d6b3",
+      "pretrigger_comparable_prefix_sha256": "76e703eeda2420611dbf07aec90f5556bdd17f767e9b771b41a63d786c116cec",
+      "runtime_binding_sha256": "ecfd4d9cc37c0051fd579f2551f804e0552a597f547fdb93f0c077faaf2d6274",
+      "archived_inference_seed_policy": "InferenceSeed=0 before Agent initialization; fresh Play domain each scene",
+      "archived_scene_sha256": "74d0f400c68dad202df3d7f154a52ceee93b9411ee837f8cf4f4ab992772262a",
+      "arms": [
+        "A",
+        "A"
+      ],
+      "override": false,
+      "pair": "Tech02"
+    }
+  ]
+}

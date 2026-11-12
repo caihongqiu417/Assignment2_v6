@@ -1,0 +1,226 @@
+{
+  "formal_rounds": 800,
+  "grouping": "leave_one_evaluation_seed_out_per_model",
+  "cosine_baseline": "nonnegative through-origin scale minimizing MAE over other-seed matched original actions",
+  "forecast_numeric_gates_pass_both_models": true,
+  "candidate_capacity": {
+    "candidate_counts": {
+      "1": 17,
+      "2": 15
+    },
+    "evaluation_seed_lists": {
+      "1": [
+        2026111402,
+        2026111404,
+        2026111410,
+        2026111413,
+        2026111418,
+        2026111503,
+        2026111506,
+        2026111508,
+        2026111509,
+        2026111510,
+        2026111511,
+        2026111517
+      ],
+      "2": [
+        2026111402,
+        2026111404,
+        2026111407,
+        2026111408,
+        2026111418,
+        2026111501,
+        2026111503,
+        2026111506,
+        2026111507,
+        2026111508,
+        2026111509,
+        2026111510,
+        2026111511,
+        2026111517
+      ]
+    },
+    "shared_seed_count": 10,
+    "distinct_union_seed_count": 16,
+    "at_least_four_per_model_all_seeds_disjoint": true,
+    "pilot_four_plus_aa_one_per_model_all_seeds_disjoint": true,
+    "maximum_equal_quota_per_model_with_disjoint_seeds": 8
+  },
+  "ready_to_freeze_pilot": true,
+  "models": {
+    "1": {
+      "counts": {
+        "archived_rounds": 400,
+        "first_contact_rounds": 397,
+        "second_contact_rounds": 275,
+        "rounds_with_both_first_exits": 397,
+        "rounds_with_eligible_decision": 314,
+        "rounds_with_readable_second_contact": 218,
+        "rounds_with_readable_prediction_hit": 124,
+        "eligible_decisions": 1711,
+        "prediction_positive": 124,
+        "actual_physical_contact_in_period": 245,
+        "actual_readable_contact": 218,
+        "prediction_physical_true_positive": 124,
+        "prediction_readable_true_positive": 124,
+        "j_sign_agreement": 115,
+        "cosine_baseline_sign_agreement": 115,
+        "readable_hits_mixed": 90
+      },
+      "trigger_exclusions": {
+        "new_decisions_after_first_before_second_callback": 2979,
+        "off_rolling_plane": 375,
+        "separation_outside_1_to_3_5m": 679,
+        "two_exits_not_observed_before_trigger": 181,
+        "at_or_outside_physical_boundary": 25,
+        "original_player_action_zero": 3,
+        "less_than_1_2s_to_time_limit": 5
+      },
+      "forecast_status": {
+        "no_predicted_contact_in_period": 1290,
+        "predicted_nonpositive_precontact_margin": 265,
+        "readable_contact_predicted": 124,
+        "predicted_contact_too_late_to_settle": 32
+      },
+      "truth_status": {
+        "no_actual_contact_in_period": 1466,
+        "j_readable": 218,
+        "actual_contact_too_late_to_settle": 27
+      },
+      "readable_misses_by_forecast_status": {
+        "predicted_nonpositive_precontact_margin": 79,
+        "no_predicted_contact_in_period": 8,
+        "predicted_contact_too_late_to_settle": 7
+      },
+      "hit_evaluation_seeds": 40,
+      "readable_precision": 1.0,
+      "physical_contact_precision": 1.0,
+      "readable_recall": 0.5688073394495413,
+      "physical_contact_recall_in_eligible_periods": 0.5061224489795918,
+      "readable_label_coverage_among_actual_second_contact_rounds": 0.7927272727272727,
+      "readable_prediction_hit_coverage_among_actual_second_contact_rounds": 0.4509090909090909,
+      "readable_prediction_hit_coverage_among_all_rounds": 0.31,
+      "timing_error_integrations": {
+        "n": 124,
+        "mae": 0.3870967741935484,
+        "p90": 1.0,
+        "p90_inclusive": 1.0,
+        "median": 0.0,
+        "bias": 0.3870967741935484
+      },
+      "j_error_m_s": {
+        "n": 124,
+        "mae": 0.4498467609160399,
+        "p90": 0.9495171269846363,
+        "p90_inclusive": 0.9389259343425087,
+        "median": 0.3603124013095634,
+        "bias": -0.07144610532063064
+      },
+      "cosine_baseline_error_m_s": {
+        "n": 124,
+        "mae": 1.4850378656864243,
+        "p90": 3.3718631863022557,
+        "p90_inclusive": 3.3380874506468663,
+        "median": 1.1015183197510479,
+        "bias": -0.7790452958866715
+      },
+      "gates": {
+        "at_least_30_hits": true,
+        "at_least_10_eval_seeds": true,
+        "precision_at_least_90pct": true,
+        "readable_recall_at_least_50pct": true,
+        "timing_p90_at_most_2_integrations": true,
+        "j_p90_at_most_1_2_m_s": true,
+        "j_mae_below_cosine": true
+      }
+    },
+    "2": {
+      "counts": {
+        "archived_rounds": 400,
+        "first_contact_rounds": 398,
+        "second_contact_rounds": 285,
+        "rounds_with_both_first_exits": 398,
+        "rounds_with_eligible_decision": 314,
+        "rounds_with_readable_second_contact": 230,
+        "rounds_with_readable_prediction_hit": 125,
+        "eligible_decisions": 1845,
+        "prediction_positive": 125,
+        "actual_physical_contact_in_period": 252,
+        "actual_readable_contact": 230,
+        "prediction_physical_true_positive": 125,
+        "prediction_readable_true_positive": 125,
+        "j_sign_agreement": 115,
+        "cosine_baseline_sign_agreement": 115,
+        "readable_hits_mixed": 92
+      },
+      "trigger_exclusions": {
+        "new_decisions_after_first_before_second_callback": 2987,
+        "two_exits_not_observed_before_trigger": 171,
+        "off_rolling_plane": 358,
+        "separation_outside_1_to_3_5m": 566,
+        "at_or_outside_physical_boundary": 32,
+        "original_player_action_zero": 1,
+        "less_than_1_2s_to_time_limit": 14
+      },
+      "forecast_status": {
+        "no_predicted_contact_in_period": 1393,
+        "predicted_nonpositive_precontact_margin": 297,
+        "readable_contact_predicted": 125,
+        "predicted_contact_too_late_to_settle": 30
+      },
+      "truth_status": {
+        "no_actual_contact_in_period": 1593,
+        "j_readable": 230,
+        "actual_contact_too_late_to_settle": 22
+      },
+      "readable_misses_by_forecast_status": {
+        "no_predicted_contact_in_period": 7,
+        "predicted_nonpositive_precontact_margin": 90,
+        "predicted_contact_too_late_to_settle": 8
+      },
+      "hit_evaluation_seeds": 38,
+      "readable_precision": 1.0,
+      "physical_contact_precision": 1.0,
+      "readable_recall": 0.5434782608695652,
+      "physical_contact_recall_in_eligible_periods": 0.49603174603174605,
+      "readable_label_coverage_among_actual_second_contact_rounds": 0.8070175438596491,
+      "readable_prediction_hit_coverage_among_actual_second_contact_rounds": 0.43859649122807015,
+      "readable_prediction_hit_coverage_among_all_rounds": 0.3125,
+      "timing_error_integrations": {
+        "n": 125,
+        "mae": 0.336,
+        "p90": 1.0,
+        "p90_inclusive": 1.0,
+        "median": 0,
+        "bias": 0.336
+      },
+      "j_error_m_s": {
+        "n": 125,
+        "mae": 0.46383744507240077,
+        "p90": 0.9253940474635346,
+        "p90_inclusive": 0.9139872792985159,
+        "median": 0.35885520551999706,
+        "bias": -0.13693227765646573
+      },
+      "cosine_baseline_error_m_s": {
+        "n": 125,
+        "mae": 1.3528961201499239,
+        "p90": 2.9296957773763372,
+        "p90_inclusive": 2.820236375388995,
+        "median": 0.9578070042474747,
+        "bias": -0.3806326236186921
+      },
+      "gates": {
+        "at_least_30_hits": true,
+        "at_least_10_eval_seeds": true,
+        "precision_at_least_90pct": true,
+        "readable_recall_at_least_50pct": true,
+        "timing_p90_at_most_2_integrations": true,
+        "j_p90_at_most_1_2_m_s": true,
+        "j_mae_below_cosine": true
+      }
+    }
+  },
+  "source_results_sha256": "fec423557c1f21bf0112cfb51b3e4eee4dbd5fc3fad489022148eca9950a643e",
+  "pilot_lock_sha256": "d531f6632dd4f6c0b031f71e35c4fc12fde32f98b7fd56b86c619e2cfb75da96"
+}

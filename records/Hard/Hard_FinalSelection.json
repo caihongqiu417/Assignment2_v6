@@ -1,0 +1,38 @@
+{
+  "team": "Team01",
+  "environment": "Hard",
+  "opponent": "OscillatingAxes",
+  "asset": "Assets/Hard_Final.onnx",
+  "asset_guid": "0934f60fccc2517087e0f127bf6b8168",
+  "source_run_id": "Team01_Hard_E7_SafetyLambda_Lambda020_seed2",
+  "source_checkpoint": "RollingControl-200018.onnx",
+  "checkpoint_step": 200018,
+  "training_seed": 2,
+  "training_safety_feedback_lambda": 0.02,
+  "sha256": "cd8db3e9dd3cb4163462b16554668df76b8bdd80ccfb6dca0b7d43d4327ba4c9",
+  "runtime_evaluation_safety_feedback_lambda": 0.0,
+  "fixed_evaluations": [
+    {
+      "id": "Hard_E7_SafetyLambda_seed2_v1",
+      "arm": "Lambda020",
+      "round_index_sha256": "f31969556a64205da1b356fb808c6db9f006ffba9a780c5abd7c174262e1cc5d",
+      "rounds": 200,
+      "wins": 157,
+      "draws": 7,
+      "losses": 36
+    },
+    {
+      "id": "Hard_E7_SafetyLambda_Lower_v1",
+      "arm": "Lambda020Seed2",
+      "round_index_sha256": "b16798a2d131926a8c61c690d32739d8aa8c81cf7e1533d341301e96d7082640",
+      "rounds": 200,
+      "wins": 155,
+      "draws": 3,
+      "losses": 42
+    }
+  ],
+  "published_round_index": "records/Hard/Hard_Final_rounds.csv",
+  "published_round_index_sha256": "3b5e30b34cee81f47c9cc58fd79f031c45d8e3133ef227648bd2e6be9a3f83ac",
+  "selection_scope": "Highest observed win rate among audited Hard fixed-policy evaluations without action intervention",
+  "historical_final": "Hard_E2"
+}
