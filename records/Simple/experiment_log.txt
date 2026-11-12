@@ -93,3 +93,8 @@ E2 的 100k 奖励较低（-0.8187 对 -0.6877），因此不能说所有阶段�
 选择依据：相同训练 seed=1 和步数预算下，20 万步平均奖励为 B0 0.028、E1 0.460、E2 0.512。50 万步时 E2 为 0.907，与 E1 基本持平，高于 B0 的 0.869。
 重复验证：训练 seed=2 时，20 万步平均奖励为 B0 -0.336、E2 0.685。两个种子下均观察到 E2 相对 B0 的中期优势。选用 seed=1 的权重，与原始作业基线直接做同种子对照。
 评估结果：所选 E2 在原 Simple 场景取得 10 胜 0 平 0 负，平均每局 1.858 秒。E1 也为 10 胜，B0 seed=1 复测为 9–10 胜。现有评估支持模型能够稳定完成这组对战，尚不足以断定最终胜率更高。
+【Simple_Final 场景验收】
+Assets/Scenes/Simple.unity 的 Player 已引用 Simple_Final.onnx，使用 Inference Only 和 CPU 推理。
+Unity 打开保存的场景，在进入 Play Mode 前后均核对模型引用和推理设置，评估直接使用场景中的配置。
+评估 seed=1，ConservativeCenter 对手，10 胜 0 平 0 负，平均每局 1.860 秒，平均奖励 0.9079。
+逐局结果：records/Simple/Simple_Final_scene_check/evaluation_rounds.csv。

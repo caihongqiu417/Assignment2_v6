@@ -47,8 +47,14 @@ public static class SimpleExperimentRunner
         foreach (var a in new[] { player, enemy })
             if (a.GetComponent<DecisionRequester>().DecisionPeriod != 10)
                 throw new Exception("Decision Period must remain 10");
-        enemy.GetComponent<BehaviorParameters>().BehaviorType = BehaviorType.HeuristicOnly;
         var behavior = player.GetComponent<BehaviorParameters>();
+        if (Arg("-experiment-mode") == "eval" && Arg("-experiment-saved-model") != "")
+        {
+            VerifySavedModel(behavior, enemy.GetComponent<BehaviorParameters>());
+            EditorApplication.isPlaying = true;
+            return;
+        }
+        enemy.GetComponent<BehaviorParameters>().BehaviorType = BehaviorType.HeuristicOnly;
         if (Arg("-experiment-mode") == "eval")
         {
             behavior.Model = AssetDatabase.LoadAssetAtPath<NNModel>(Arg("-experiment-model", "Assets/RollingControl.onnx"));
@@ -70,6 +76,16 @@ public static class SimpleExperimentRunner
         EditorSceneManager.MarkSceneDirty(player.gameObject.scene);
         Debug.Log("EXPERIMENT_READY mode=" + Arg("-experiment-mode") + " opponent=" + enemy.heuristicMode);
         EditorApplication.isPlaying = true;
+    }
+
+    static void VerifySavedModel(BehaviorParameters player, BehaviorParameters enemy)
+    {
+        string expectedPath = Arg("-experiment-saved-model");
+        string actualPath = AssetDatabase.GetAssetPath(player.Model);
+        if (actualPath != expectedPath || player.BehaviorType != BehaviorType.InferenceOnly ||
+            player.InferenceDevice != InferenceDevice.CPU || enemy.BehaviorType != BehaviorType.HeuristicOnly)
+            throw new Exception("Unexpected saved scene model or behavior settings: " + actualPath);
+        Debug.Log("SAVED_MODEL_VERIFIED path=" + actualPath + " device=" + player.InferenceDevice);
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -101,6 +117,8 @@ public static class SimpleExperimentRunner
             EditorApplication.Exit(3);
             return;
         }
+        if (Arg("-experiment-saved-model") != "")
+            VerifySavedModel(activeBehavior, GameObject.Find("Enemy").GetComponent<BehaviorParameters>());
         var controller = UnityEngine.Object.FindObjectOfType<RollerGameController>();
         string path = Arg("-experiment-output");
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
