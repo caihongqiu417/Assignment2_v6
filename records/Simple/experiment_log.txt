@@ -1,6 +1,6 @@
 Simple 实验记录
 
-负责人：待填写
+负责人：陈泓圻
 分支：simple
 共同条件：原 Simple 场景、ConservativeCenter 对手、固定出生位置、原始奖励、
 Decision Period=10、PPO、从头训练，计划 500000 步；B0/E1/E2 首次训练 seed=1，重复实验另注明。
