@@ -321,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 6899347117855254031, guid: cda6a5ed5743d054ebf60ffe7fe280eb,
         type: 3}
       propertyPath: heuristicMode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6899347117855254031, guid: cda6a5ed5743d054ebf60ffe7fe280eb,
         type: 3}
@@ -542,6 +542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787873756138284950, guid: cda6a5ed5743d054ebf60ffe7fe280eb,
+        type: 3}
+      propertyPath: m_Model
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8787873756138284950, guid: cda6a5ed5743d054ebf60ffe7fe280eb,
         type: 3}
@@ -768,6 +773,7 @@ MonoBehaviour:
   minSpawnDistance: 2
   fallYThreshold: 0
   playerAgent: {fileID: 0}
+  maxEpisodeTime: 10
 --- !u!1 &1463339558
 GameObject:
   m_ObjectHideFlags: 0
